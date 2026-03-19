@@ -1,5 +1,5 @@
-# DUX_A1_CL 
-
+# DUX_A1_A2_CL
+# DUX A1_GROUP
 # Craigslist UK Redesign Project
 
 ## Table of Contents
@@ -576,7 +576,21 @@ W3C (2018) *Web Content Accessibility Guidelines (WCAG) 2.1*. World Wide Web Con
 'Gumtree | Free Classified Ads from the #1 Classifieds Site in the UK' (no date) *Gumtree*. Available at: https://www.gumtree.com/ (Accessed: 8 February 2026).
 
 Assignment 1 for DUX Kai, Will and Daniel - Remake of Craigslist UI (Craigslist London) to follow modern design principles, be accessible and open
-# DUX_A2_CL _Kai_Young
+# DUX_A2_CL_Kai_Young
 
-# Craigslist UK Redesign Project with functionality
+## Table of Contents
+
+1. [Craigslist UK Redesign Project with functionality](#1-Craigslist-UK-Redesign-Project-with-functionality)
+2. [Revision of Wireframes](#1-1-Revision-of-Wireframes)
+3. [Design — Wireframes, Accessibility & Usability](#3-design--wireframes-accessibility--usability)
+4. [Reflection on the Design Process](#4-reflection-on-the-design-process)
+5. [Contributors](#5-contributors)
+6. [References](#6-references)
+
+
+# 1. Craigslist UK Redesign Project with functionality 
+To test this program please install php on your device and php server in vscode.
+Go to vscode and open the folder "WEB_ROOT" as the project folder, click on index.php and click on the php button at the top or instead run command "php -S localhost:8080" from the same Working Directory
+
+## 1.1 Revision of Wireframes 
 
