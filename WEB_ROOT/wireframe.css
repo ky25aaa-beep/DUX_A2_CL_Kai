@@ -1,0 +1,632 @@
+/* ===========================
+   wireframe.css — craiglist London
+   Classic classified-ads aesthetic
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Lexend:wght@400;700&display=swap');
+/* Google Fonts
+/* ---- Reset & Base ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Lexend;
+  font-size: 13px;
+  background: #f5f5f0;
+  color: #222;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: #800080; text-decoration: none; }
+a:hover { text-decoration: underline; color: #500050; }
+
+header {
+  background: #fff;
+  border-bottom: 2px solid #800080;
+  padding: 0.7rem 2rem 0.7rem 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  background: #f0edf4;
+  border-bottom: 1px solid #c8b8d0;
+  padding: 0.5rem 2rem 0.5rem 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 12px;
+}
+
+header h1 {
+  font-family: 'Courier Prime', 'Courier New', monospace;
+  font-size: 2rem;
+  color: #800080;
+  letter-spacing: -1px;
+}
+
+header h3 {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: normal;
+}
+
+header .header-left { display: flex; align-items: center; gap: 1.2rem; }
+header .header-right { display: flex; align-items: center; gap: 0.8rem; }
+
+/* ---- Buttons ---- */
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 0.4rem 1rem;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: #800080;
+  color: #fff;
+}
+
+.btn-primary:hover { background: #600060; color: #fff; text-decoration: none; }
+
+.btn-secondary {
+  background: #e8e8e8;
+  color: #800080;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover { background: #ddd; }
+
+
+
+nav a {
+  color: #800080;
+  font-weight: bold;
+}
+
+nav form { display: flex; gap: 0.4rem; align-items: center; }
+nav input[type="search"] {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 3px;
+  font-size: 12px;
+  font-family: inherit;
+  width: 180px;
+}
+
+/* ---- Main layout ---- */
+.page-wrap {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 0 1rem 0 0.4rem;
+  flex: 1;
+}
+
+/* ---- Sidebar ---- */
+aside {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-section {
+  background: #fff;
+  border: 1px solid #d8c8e0;
+  border-top: 3px solid #800080;
+  padding: 0.8rem;
+}
+
+.sidebar-section h4, .sidebar-section h5 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #800080;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.sidebar-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-section ul li {
+  border-bottom: 1px dotted #e0d8e8;
+  padding: 0.25rem 0;
+  font-size: 12px;
+}
+
+.sidebar-section ul li:last-child { border-bottom: none; }
+
+.sidebar-section .social-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 12px;
+}
+
+/* ---- Main content ---- */
+main.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ---- Section headers ---- */
+.section-header {
+  border-bottom: 2px solid #800080;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 14px;
+  color: #800080;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---- Ad cards grid ---- */
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+}
+
+.ad-type-field {
+  grid-column: 1;
+  grid-row: 3;
+}
+.first-name-field {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.last-name-field {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* place big and small category side-by-side */
+.category-field {
+  grid-column: 1;
+  grid-row: 2;
+}
+.subcategory-field {
+  grid-column: 2;
+  grid-row: 2;
+}
+.ad-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #e0d8e8;
+}
+
+.ad-card-body {
+  padding: 0.6rem 0.7rem;
+}
+
+.ad-card-title {
+  font-size: 13px;
+  font-weight: bold;
+  color: #800080;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.ad-card-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.1rem;
+}
+
+.ad-card-location {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 0.4rem;
+}
+
+.ad-card-desc {
+  font-size: 11px;
+  color: #444;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+/* ---- Featured sellers ---- */
+.sellers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
+  gap: 1rem;
+}
+
+.seller-card {
+  background: #fff;
+  border: 1px solid #d0c8d8;
+  border-left: 4px solid #800080;
+  padding: 0.7rem;
+}
+
+.seller-card h5 {
+  font-size: 13px;
+  color: #800080;
+  margin-bottom: 0.25rem;
+}
+
+.seller-card p {
+  font-size: 11px;
+  color: #555;
+}
+
+/* ---- Messages thread ---- */
+.messages-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.messages-thread .seller-card {
+  border-right: 1px solid #d0c8d8;
+}
+
+.messages-thread .message-buyer {
+  border-left: 1px solid #d0c8d8;
+  border-right: 4px solid #800080;
+  text-align: right;
+}
+
+.message-compose textarea {
+  width: 100%;
+  min-height: 72px;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 12px;
+  background: #fff;
+  padding: 0.45rem 0.55rem;
+  resize: vertical;
+}
+
+/* ---- Post ad form ---- */
+.post-ad-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post-ad-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.ad-type-field {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.first-name-field {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.last-name-field {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.post-ad-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.post-ad-form .form-group label {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.post-ad-form input[type="text"],
+.post-ad-form select,
+.post-ad-form textarea {
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  padding: 0.45rem 0.55rem;
+  font-family: inherit;
+  font-size: 12px;
+  background: #fff;
+}
+
+.post-ad-form select:disabled {
+  background: #ececec;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.post-ad-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.post-ad-form .form-span-2 {
+  grid-column: span 2;
+}
+
+.photo-upload-row {
+  border: 1px solid #d8cce0;
+  padding: 0.8rem;
+}
+
+
+.file-uploader {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+
+/* ---- Content section boxes ---- */
+.content-section {
+  background: #fff;
+  border: 1px solid #d8cce0;
+  padding: 1rem;
+}
+
+/* ---- Filter bar (search page) ---- */
+.filter-bar {
+  background: #fff;
+  border: 1px solid #d8cce0;
+  border-top: 3px solid #800080;
+  padding: 1rem;
+}
+
+.filter-bar h2 {
+  font-size: 13px;
+  color: #800080;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8rem;
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.filter-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.filter-form label {
+  font-size: 11px;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.filter-form select,
+.filter-form input[type="text"] {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+/* ---- Search results count ---- */
+.results-meta {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 0.4rem;
+}
+
+/* ---- Footer ---- */
+
+footer {
+  background: #2a002a;
+  color: #ccc;
+  padding: 1.5rem 2rem 0.8rem;
+  margin-top: 2rem;
+  font-size: 11px;
+}
+
+.footer-inner {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 1rem 0 0.4rem;
+}
+
+.footer-brand-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #500050;
+  padding-bottom: 0.8rem;
+}
+
+.footer-brand-row .site-name {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.3rem;
+  color: #e080e0;
+  font-weight: bold;
+}
+
+.footer-brand-row .tagline {
+  color: #999;
+  font-size: 11px;
+}
+
+.footer-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #400040;
+}
+
+.footer-col h4 {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #e080e0;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer-col ul li a {
+  color: #bbb;
+  font-size: 11px;
+}
+
+.footer-col ul li a:hover { color: #e080e0; text-decoration: underline; }
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.footer-social a {
+  color: #bbb;
+  font-size: 11px;
+}
+
+.footer-social a:hover { color: #e080e0; }
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 10px;
+  padding-top: 0.5rem;
+}
+
+.footer-bottom a { color: #888; }
+.footer-bottom a:hover { color: #ccc; }
+.footer-bottom .sep { margin: 0 0.3rem; }
+
+/* ---- Responsive ---- */
+@media (max-width: 700px) {
+  .page-wrap { flex-direction: column; }
+  aside { flex: none; }
+  header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  nav { flex-wrap: wrap; }
+  .post-ad-grid { grid-template-columns: 1fr; }
+  .post-ad-form .form-span-2 { grid-column: auto; }
+}
+
+
+/* ---- Dropdown button ---- */
+.dropbtn {
+  background-color: #800080;
+  color: white;
+  padding: 0.4rem 1rem;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---- Dropdown hover/focus ---- */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #800080;
+}
+
+/* ---- Dropdown search field ---- */
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size:16px;
+  padding: 14px 20px 14px 20px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ---- Dropdown search focus ---- */
+#myInput:focus {outline: 3px solid #ddd;}
+
+/* ---- Dropdown container ---- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* ---- Dropdown content ---- */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 115px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+/* ---- Dropdown links ---- */
+.dropdown-content a {
+  color: black;
+  font-size: 12px;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+
+}
+
+/* ---- Dropdown links hover ---- */
+.dropdown-content a:hover {background-color: #444}
+
+/* ---- Dropdown show state ---- */
+.show {display:block;}
+
+
+/* ---- Profile picture upload ---- */
+.profile-picture {
+  opacity: 0.75;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  overflow: hidden;
+
+  /* default image */
+  background: url('https://media.istockphoto.com/id/1324356458/vector/picture-icon-photo-frame-symbol-landscape-sign-photograph-gallery-logo-web-interface-and.jpg?s=612x612&w=0&k=20&c=ZmXO4mSgNDPzDRX-F8OKCfmMqqHpqMV6jiNi00Ye7rE=');
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 8px 6px -6px black;
+}
