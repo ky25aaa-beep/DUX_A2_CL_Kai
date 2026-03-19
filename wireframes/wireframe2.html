@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results: Pianos in London — craiglist</title>
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <h1>craiglist</h1>
+      <h3>📍 London UK</h3>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-primary">post to classifieds</button>
+      <button class="btn btn-secondary">my account</button>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <form>
+      <input type="search" placeholder="search classifieds..." value="pianos">
+      <button type="submit" class="btn btn-primary">go</button>
+    </form>
+    <a href="index.html">home</a>
+    <a href="#">community</a>
+    <a href="ads.html">for sale</a>
+    <a href="#">housing</a>
+    <a href="#">jobs</a>
+    <a href="#">services</a>
+    <a href="#">help</a>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="page-wrap">
+
+    <!-- SIDEBAR -->
+    <aside>
+
+      <div class="sidebar-section">
+        <h4>Your Area</h4>
+        <p style="font-size:12px;margin-bottom:0.4rem;"><strong>London</strong></p>
+        <a href="#" style="font-size:11px;">change area</a>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Nearby Music Events</h4>
+        <ul>
+          <li><a href="#">Piano Recital — Mar 2</a></li>
+          <li><a href="#">Jazz Night — Mar 5</a></li>
+          <li><a href="#">Orchestra — Mar 10</a></li>
+          <li><a href="#">Open Mic — Mar 14</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Related Services</h4>
+        <ul>
+          <li><a href="#">Music stores</a></li>
+          <li><a href="#">Instrument repair</a></li>
+          <li><a href="#">Piano movers</a></li>
+          <li><a href="#">Tuning & restoration</a></li>
+          <li><a href="#">Music tutoring</a></li>
+          <li><a href="#">Sheet music</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Browse Categories</h4>
+        <ul>
+          <li><a href="#">Pianos</a></li>
+          <li><a href="#">Guitars</a></li>
+          <li><a href="#">Strings</a></li>
+          <li><a href="#">Brass & Woodwind</a></li>
+          <li><a href="#">Drums & Percussion</a></li>
+          <li><a href="#">DJ & Electronic</a></li>
+          <li><a href="#">All instruments</a></li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <!-- FILTERS -->
+      <div class="filter-bar">
+        <h2>Filter Results</h2>
+        <form class="filter-form">
+          <div class="form-group">
+            <label for="filter-category">Category</label>
+            <select id="filter-category" name="category">
+              <option value="">All</option>
+              <option value="pianos" selected>Pianos</option>
+              <option value="instruments">Other Instruments</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="filter-min">Min Price (£)</label>
+            <input type="text" id="filter-min" name="min_price" placeholder="0" style="width:80px;">
+          </div>
+          <div class="form-group">
+            <label for="filter-max">Max Price (£)</label>
+            <input type="text" id="filter-max" name="max_price" placeholder="any" style="width:80px;">
+          </div>
+          <div class="form-group">
+            <label for="filter-location">Location</label>
+            <input type="text" id="filter-location" name="location" placeholder="London or postcode" style="width:150px;">
+          </div>
+          <button type="submit" class="btn btn-primary">filter</button>
+        </form>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="content-section">
+        <div class="section-header">
+          <h2>Pianos &amp; Instruments in London</h2>
+        </div>
+        <p class="results-meta">6 results found · sorted by: most recent · <a href="#">change sort</a></p>
+
+        <div class="ads-grid">
+
+          <div class="ad-card">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=300&q=80" alt="Upright Piano">
+            <div class="ad-card-body">
+              <div class="ad-card-title">Upright Piano for Sale</div>
+              <div class="ad-card-price">£400</div>
+              <div class="ad-card-location">📍 Camden, London</div>
+              <div class="ad-card-desc">Well-maintained upright piano, perfect for beginners and students. Recently tuned.</div>
+              <a href="#" class="btn btn-primary">contact seller</a>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=300&q=80" alt="Grand Piano">
+            <div class="ad-card-body">
+              <div class="ad-card-title">Grand Piano — Steinway Model B</div>
+              <div class="ad-card-price">£8,000</div>
+              <div class="ad-card-location">📍 Kensington, London</div>
+              <div class="ad-card-desc">Concert-quality Steinway grand, excellent condition, full service history.</div>
+              <a href="#" class="btn btn-primary">contact seller</a>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80" alt="Electric Keyboard">
+            <div class="ad-card-body">
+              <div class="ad-card-title">Yamaha Electric Keyboard 61-key</div>
+              <div class="ad-card-price">£120</div>
+              <div class="ad-card-location">📍 Hackney, London</div>
+              <div class="ad-card-desc">Lightly used, includes stand, sustain pedal and power supply. Great starter kit.</div>
+              <a href="#" class="btn btn-primary">contact seller</a>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=300&q=80" alt="Violin">
+            <div class="ad-card-body">
+              <div class="ad-card-title">Full-Size Violin + Case</div>
+              <div class="ad-card-price">£150</div>
+              <div class="ad-card-location">📍 Islington, London</div>
+              <div class="ad-card-desc">Full-size violin, includes bow and hard case. Great for students, no cracks.</div>
+              <a href="#" class="btn btn-primary">contact seller</a>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <img src="https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=300&q=80" alt="Acoustic Guitar">
+            <div class="ad-card-body">
+              <div class="ad-card-title">Acoustic Guitar + Gig Bag</div>
+              <div class="ad-card-price">£90</div>
+              <div class="ad-card-location">📍 Brixton, London</div>
+              <div class="ad-card-desc">Classic dreadnought acoustic, well cared for, new strings fitted last month.</div>
+              <a href="#" class="btn btn-primary">contact seller</a>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Drum Kit">
+            <div class="ad-card-body">
+              <div class="ad-card-title">5-Piece Drum Kit</div>
+              <div class="ad-card-price">£250</div>
+              <div class="ad-card-location">📍 Greenwich, London</div>
+              <div class="ad-card-desc">Pearl Export 5-piece, includes cymbals, stool and hardware. Good condition, buyer collects.</div>
+              <a href="#" class="btn btn-primary">contact seller</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="site-name">craiglist</span>
+        <span class="tagline">london uk · community-powered classifieds since 1995</span>
+      </div>
+
+      <div class="footer-links-row">
+        <div class="footer-col">
+          <h4>for sale</h4>
+          <ul>
+            <li><a href="#">antiques</a></li>
+            <li><a href="#">appliances</a></li>
+            <li><a href="#">bikes</a></li>
+            <li><a href="#">books</a></li>
+            <li><a href="#">cars & vans</a></li>
+            <li><a href="#">clothes</a></li>
+            <li><a href="#">electronics</a></li>
+            <li><a href="#">furniture</a></li>
+            <li><a href="#">free stuff</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>housing</h4>
+          <ul>
+            <li><a href="#">flats to rent</a></li>
+            <li><a href="#">rooms wanted</a></li>
+            <li><a href="#">houses for sale</a></li>
+            <li><a href="#">short-term lets</a></li>
+            <li><a href="#">flatshares</a></li>
+            <li><a href="#">commercial</a></li>
+            <li><a href="#">parking</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>jobs</h4>
+          <ul>
+            <li><a href="#">accounting</a></li>
+            <li><a href="#">admin / office</a></li>
+            <li><a href="#">creative / design</a></li>
+            <li><a href="#">education</a></li>
+            <li><a href="#">hospitality</a></li>
+            <li><a href="#">part time</a></li>
+            <li><a href="#">tech / IT</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>services</h4>
+          <ul>
+            <li><a href="#">beauty</a></li>
+            <li><a href="#">childcare</a></li>
+            <li><a href="#">cleaning</a></li>
+            <li><a href="#">financial</a></li>
+            <li><a href="#">lessons & tutoring</a></li>
+            <li><a href="#">moving</a></li>
+            <li><a href="#">pet care</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>community</h4>
+          <ul>
+            <li><a href="#">activities</a></li>
+            <li><a href="#">events</a></li>
+            <li><a href="#">groups</a></li>
+            <li><a href="#">local news</a></li>
+            <li><a href="#">missed connections</a></li>
+            <li><a href="#">volunteers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>craiglist</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">safety tips</a></li>
+            <li><a href="#">avoid scams</a></li>
+            <li><a href="#">help & FAQ</a></li>
+            <li><a href="#">contact us</a></li>
+          </ul>
+          <div class="footer-social">
+            <a href="#"><i class="icon-facebook"></i></a>
+            <a href="#"><i class="icon-twitter"></i></a>
+            <a href="#"><i class="icon-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 craiglist london. all rights reserved.</span>
+        <span>
+          <a href="#">privacy</a><span class="sep">·</span>
+          <a href="#">terms</a><span class="sep">·</span>
+          <a href="#">cookies</a><span class="sep">·</span>
+          <a href="#">accessibility</a><span class="sep">·</span>
+          <a href="#">sitemap</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
