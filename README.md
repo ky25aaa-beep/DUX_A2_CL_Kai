@@ -588,7 +588,7 @@ Assignment 1 for DUX Kai, Will and Daniel - Remake of Craigslist UI (Craigslist 
 6. [References](#6-references)
 
 
-# 1. Craigslist UK Redesign Project with functionality 
+## 1. Craigslist UK Redesign Project with functionality 
 To test this program please install php on your device and php server in vscode.
 Go to vscode and open the folder "WEB_ROOT" as the project folder, click on index.php and click on the php button at the top or instead run command "php -S localhost:8080" from the same Working Directory
 
