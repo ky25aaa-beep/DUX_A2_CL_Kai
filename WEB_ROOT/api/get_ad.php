@@ -1,4 +1,3 @@
-#get ad wordwrapith ad id and return ad details as json
 <?php
 header('Content-Type: application/json');
 $adId = $_GET['id'] ?? '';

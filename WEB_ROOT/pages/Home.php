@@ -110,7 +110,7 @@
                 <div class="ad-card-price">${price}</div>
                 <div class="ad-card-location">📍 ${ad.location || ''}</div>
                 <div class="ad-card-desc">${ad.ad_description || ''}</div>
-                <a href="#" class="btn btn-primary">contact</a>
+                <a href="/?page=open_ad&id=${ad.id}" class="btn btn-primary">open ad</a>
               </div>
             </div>`;
         }).join('');

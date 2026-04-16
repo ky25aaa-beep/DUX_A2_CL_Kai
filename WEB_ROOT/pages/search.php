@@ -39,7 +39,7 @@ $searchQuery = $_GET['q'] ?? '';
                   <div class="ad-card-price">£${price}</div>
                   <div class="ad-card-location">📍 ${location}</div>
                   <div class="ad-card-desc">${desc}</div>
-                  <a href="#" class="btn btn-primary">contact seller</a>
+                  <a href="/?page=open_ad&id=${ad.id}" class="btn btn-primary">open ad</a>
                 </div>
               </div>
             `;
