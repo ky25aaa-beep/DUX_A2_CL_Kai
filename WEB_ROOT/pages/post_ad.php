@@ -29,15 +29,18 @@
                 <option value="craiglist">Craiglist</option>
               </select>
             </div>
-            <div class="form-group category-field">
-                <!-- placeholder for applicable list of subcategories -->
+            <div class="form-group subcategory-field">
+                <label for="subCategory">Subcategory</label>
+                <select id="subCategory" name="subCategory" disabled>
+                  <option value="">Select subcategory</option>
+                </select>
             </div>
-            <div class="form-group">
+            <div class="form-group price-field">
               <label for="price">Price (£)</label>
               <input type="text" id="price" name="price" placeholder="900">
             </div>
 
-            <div class="form-group">
+            <div class="form-group location-field">
               <label for="location">Location</label>
               <input type="text" id="location" name="location" placeholder="eg. Camden, London">
             </div>
@@ -115,6 +118,7 @@
     };
 
     function populateSubcategories(key) {
+      if (!subCategory) return;
       subCategory.innerHTML = '';
       const defaultOpt = document.createElement('option');
       defaultOpt.value = '';

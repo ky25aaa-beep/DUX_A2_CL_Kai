@@ -1,7 +1,7 @@
       <!-- FEATURED POSTS -->
       <div class="content-section">
         <div class="section-header">
-          <h2>Featured Posts</h2> 
+          <a href="/?page=featured"><h2>Featured Posts</h2></a>
 
         </div>
         <div id="featured-posts" class="ads-grid">

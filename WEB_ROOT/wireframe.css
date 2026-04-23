@@ -314,19 +314,39 @@ main.content {
   gap: 0.9rem;
 }
 
-.ad-type-field {
+.post-ad-form .ad-type-field {
   grid-column: 1;
   grid-row: 1;
 }
 
-.first-name-field {
+.post-ad-form .first-name-field {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.post-ad-form .last-name-field {
   grid-column: 2;
   grid-row: 1;
 }
 
-.last-name-field {
+.post-ad-form .category-field {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.post-ad-form .subcategory-field {
   grid-column: 2;
   grid-row: 2;
+}
+
+.post-ad-form .price-field {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.post-ad-form .location-field {
+  grid-column: 2;
+  grid-row: 3;
 }
 
 .post-ad-form .form-group {
