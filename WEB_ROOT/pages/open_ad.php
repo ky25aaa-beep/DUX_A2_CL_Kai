@@ -37,7 +37,7 @@
                 <div class="ad-card-body">
                     <div class="ad-card-title">${ad.ad_title}</div>
                     <div class="ad-card-price">${price}</div>
-                    <div class="ad-card-location">📍 ${ad.location || ''}</div>
+                    <div class="ad-card-location">📍 ${ad.location || ''}</div> #add mapping api here via google maps
                     <div class="ad-card-desc">${ad.ad_description || ''}</div>
                     <a href="mailto:${ad.seller_email || 'unknown@ craigslist.org'}" class="btn btn-primary">contact</a>
                 </div>`;

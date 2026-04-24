@@ -4,7 +4,7 @@
           <a href="/?page=featured"><h2>Featured Posts</h2></a>
 
         </div>
-        <div id="featured-posts" class="ads-grid">
+        <div id="featured-posts" class="ads-grid" role="region" aria-label="Featured posts" aria-live="polite">
         </div>
       </div>
 
@@ -13,7 +13,7 @@
         <div class="section-header">
           <h2>Featured Sellers</h2>
         </div>
-        <div class="sellers-grid">
+        <div class="sellers-grid" role="region" aria-label="Featured sellers">
           <div class="seller-card">
             <h5>Alice's Antiques</h5>
             <p>⭐⭐⭐⭐⭐ — Top-rated seller in London<br>Specialising in Victorian furniture & glassware.</p>
@@ -38,9 +38,9 @@
         <div class="section-header">
           <h2>Local Ads</h2>
         </div>
-        <div class="ads-grid">
+        <div class="ads-grid" role="region" aria-label="Local ads">
 
-          <div class="ad-card">
+          <div class="ad-card" role="article" aria-label="1-Bed Flat for Rent">
             <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=300&q=80" alt="Flat for Rent">
             <div class="ad-card-body">
               <div class="ad-card-title">1-Bed Flat for Rent</div>
@@ -51,7 +51,7 @@
             </div>
           </div>
 
-          <div class="ad-card">
+          <div class="ad-card" role="article" aria-label="Dog Walking Service">
             <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=300&q=80" alt="Dog Walking">
             <div class="ad-card-body">
               <div class="ad-card-title">Dog Walking Service</div>
@@ -62,7 +62,7 @@
             </div>
           </div>
 
-          <div class="ad-card">
+          <div class="ad-card" role="article" aria-label="Yoga Classes — All Levels">
             <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=300&q=80" alt="Yoga Classes">
             <div class="ad-card-body">
               <div class="ad-card-title">Yoga Classes — All Levels</div>
@@ -73,7 +73,7 @@
             </div>
           </div>
 
-          <div class="ad-card">
+          <div class="ad-card" role="article" aria-label="Handyman — All Jobs">
             <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=300&q=80" alt="Handyman">
             <div class="ad-card-body">
               <div class="ad-card-title">Handyman — All Jobs</div>
@@ -104,7 +104,7 @@
           const price = (ad.ad_price === 0 || ad.ad_price === '0') ? 'Free' : `£${ad.ad_price}`;
           return `
             <div class="ad-card">
-              <img src="${img}" alt="${ad.ad_title}">
+              <img src="${img}" alt="${ad.ad_title} Image of the Product">
               <div class="ad-card-body">
                 <div class="ad-card-title">${ad.ad_title}</div>
                 <div class="ad-card-price">${price}</div>

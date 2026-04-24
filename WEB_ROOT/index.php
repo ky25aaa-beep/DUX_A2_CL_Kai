@@ -39,6 +39,8 @@ if ($fullPath && is_file($fullPath) && strpos($fullPath, $pagesDir) === 0) {
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to main content</a>
+
   <?php include 'fixed/nav-head.php'; ?>
 
   <!-- MAIN -->
@@ -47,7 +49,7 @@ if ($fullPath && is_file($fullPath) && strpos($fullPath, $pagesDir) === 0) {
     <?php include 'fixed/sidebar.php'; ?>
 
     <!-- CONTENT -->
-    <main class="content">
+    <main id="main-content" class="content" role="main" aria-label="Main content">
       <?php include $includePath; ?>
     </main>
 

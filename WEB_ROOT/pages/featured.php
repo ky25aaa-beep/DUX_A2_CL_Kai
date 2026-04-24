@@ -26,7 +26,7 @@
           const price = (ad.ad_price === 0 || ad.ad_price === '0') ? 'Free' : `£${ad.ad_price}`;
           return `
             <div class="ad-card">
-              <img src="${img}" alt="${ad.ad_title}">
+              <img src="${img}" alt="${ad.ad_title} Image of the Product">
               <div class="ad-card-body">
                 <div class="ad-card-title">${ad.ad_title}</div>
                 <div class="ad-card-price">${price}</div>

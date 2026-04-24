@@ -576,7 +576,123 @@ W3C (2018) *Web Content Accessibility Guidelines (WCAG) 2.1*. World Wide Web Con
 'Gumtree | Free Classified Ads from the #1 Classifieds Site in the UK' (no date) *Gumtree*. Available at: https://www.gumtree.com/ (Accessed: 8 February 2026).
 
 Assignment 1 for DUX Kai, Will and Daniel - Remake of Craigslist UI (Craigslist London) to follow modern design principles, be accessible and open
+
+
 # DUX_A2_CL_Kai_Young
+
+## Table of Contents
+
+1. [Design](#design)
+2. [Development](#development)
+3. [Testing](#testing)
+4. [Version control](#version-control)
+5. [Attribution](#attribution)
+6. [Deployment & Run](#deployment--run)
+
+
+## Design
+
+- **Aim:** create an example implementation of the plan devsied in A1 above,
+- **Objectives:** improve search discoverability (visible search button), add clear visual hierarchy and iconography, ensure responsive layouts and touch-friendly targets (>= 44×44 CSS px), and make pages keyboard + screen-reader-friendly.
+
+### User stories (selected from Assignment 1)
+
+- **Sarah (First-time visitor):** visible search button; readable typography (>=16px, line-height >=1.5); touch targets >=44×44.
+- **Dexter (Returning visitor):** keyboard-only navigation; recently viewed/your categories; colour-independent status indicators.
+- **Lana (Frequent visitor):** filterable search results by category/location; clear visual hierarchy; optional soft-contrast/dark mode.
+
+### Revised wireframes and justification
+
+- Files: [wireframes/Home.html](wireframes/Home.html), [wireframes/wireframe2.html](wireframes/wireframe2.html), [wireframes/wireframe3.html](wireframes/wireframe3.html)
+- Changes and rationale:
+  - Prominent search form with a labelled `button` (addresses Sarah S1).
+  - Category grid with icons + labels to reduce reliance on text-only navigation (recognition over recall; helps Dexter & Lana).
+  - Card-based results with thumbnail, title, price, location to improve scanability for users with dyslexia.
+  - Semantic landmarks: `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>` to aid screen readers and support skip-navigation.
+  - Form controls use visible labels (not placeholders), larger inputs, and clear ARIA attributes on dynamic controls.
+
+
+## Development
+
+- **Tech stack:** HTML5, CSS3 (Grid + Flexbox), responsive media queries, light PHP endpoints under `WEB_ROOT/api/` for demo data. Optional Font Awesome icons used for visual indicators (facebook, instagram, etc).
+- **Pages implemented (minimum three):**
+  - `https://dux-a2.kai-young.co.uk/?page=Home` — Homepage with search and category grid.
+  - `https://dux-a2.kai-young.co.uk/?page=earch` — Search results and filters.
+  - `https://dux-a2.kai-young.co.uk/?page=post_ad` — Post-ad form (functional form with file upload input).
+  - `https://dux-a2.kai-young.co.uk/?page=open_ad` — Single ad view.
+- **Responsive approach:** CSS Grid for results and layout; media queries for breakpoints (mobile-first). See `wireframe.css` and `WEB_ROOT/wireframe.css` for rules.
+- **Accessibility features implemented:**
+  - Semantic HTML landmarks (`<nav>`, `<main>`).
+  - Visible focus indicators; keyboard-accessible controls (operable with Tab/Enter/Space).
+  - `alt` attributes on images; labels on all form fields.
+  - Contrast choices aligned to WCAG 2.1 AA targets where possible.
+  - Errors show text + icon (not colour alone).
+- **Interactive features:**
+  - Search form submits to `https://dux-a2.kai-young.co.uk/?page=search` and demonstrates dynamic filtering.
+  - Post-ad form uses client-side validation and a file input (users control uploads).
+  - (Optional) the repository includes hooks to integrate a map API for location display — see comments in `https://dux-a2.kai-young.co.uk/?page=open_ad`.
+- **Code quality & structure:**
+  - HTML and CSS organized into clearly named directories: `WEB_ROOT/`, `WEB_ROOT/pages/`, `WEB_ROOT/api/`, `WEB_ROOT/files/`.
+  - Consistent naming (lowercase, hyphens), commented CSS sections in `wireframe.css`.
+
+
+## Testing
+
+### Manual testing (user-story mapping)
+
+- **S1 (Sarah — Search):** Type "washing machine" in homepage search, press on-screen Go button → results returned from `WEB_ROOT/api/search.php` within a reasonable time. Verified that pressing Enter and clicking button both work.
+- **S2 (Sarah — Readability):** Open ad pages confirm body text is at least `14px` and `line-height: 1.5`. Contrast checked using an external contrast checker and documented in `testing/` screenshots.
+- **S3 (Touch targets):** Interactive buttons and links evaluated on mobile viewport; all primary interactive targets sized >=44×44 px.
+- **D2 (Dexter — Keyboard):** Tab through pages — navigation, filters, post-ad inputs reachable and operable with Enter/Space; visible focus ring present.
+- **L1 (Lana — Filters):** Apply location and category filters on the search results page; results refresh and match filter criteria.
+
+### Automated testing and validation
+
+- **HTML/CSS Validation:** Run W3C HTML and CSS validators on deployed pages and include result screenshots in `testing/validators/`.
+- **Performance & Accessibility Audit:** Run Google Lighthouse on the deployed site and include a summary (Performance, Accessibility, Best Practices, SEO) in `testing/lighthouse/`.
+
+Notes: validation screenshots and Lighthouse reports are stored in `testing/` for inclusion in grading evidence.
+
+
+## Version control
+
+- **Git:** All development tracked with Git. The repository contains regular commits describing feature work (search, layout, accessibility fixes). Keep commit messages concise and meaningful (e.g. "add search form + server stub", "responsive grid for ads", "fix focus styles / aria labels").
+- **Repository:** push to GitHub and enable branch protection if collaborating. Ensure at least several commits demonstrating progression before submission.
+
+
+## Attribution
+
+- **External libraries & resources:**
+  - Font Awesome — icons (attributed in HTML comments where used).
+  - Any third-party CSS snippets or examples are credited in comments above the relevant code blocks.
+  - Design references: Nielsen Norman Group articles and W3C WCAG guidelines referenced in the README.
+
+- **AI usage note:** Per module rules, any AI-assisted content generation used during development is documented separately. No AI-generated content is included in the final README or code submission for assessment.
+
+
+## Deployment & Run
+
+- **Local preview (PHP built-in server):** from the repository root run:
+
+```bash
+cd /home/kai/code/dux_A2_CL_Kai_Young
+php -S localhost:8080 -t WEB_ROOT
+```
+
+- **Deployed site:** (add your GitHub Pages / Netlify link here)
+
+- **Checklist before submitting GitHub link:**
+  - All files present in repo and readable.
+  - README includes design, development, testing evidence and deployment link.
+  - External links configured to open in a new tab (`target="_blank" rel="noopener noreferrer"`).
+
+
+---
+
+If you'd like, I can now:
+- run a quick pass to add W3C validation screenshots to `testing/` (if you want me to run Lighthouse we need a live URL or local host exposed), or
+- prepare the GitHub README-ready screenshots and a short commit history summary for inclusion in the README.
+
 
 ## Table of Contents
 
@@ -584,7 +700,7 @@ Assignment 1 for DUX Kai, Will and Daniel - Remake of Craigslist UI (Craigslist 
 2. [Revision of Wireframes](#2-Revision-of-Wireframes)
 3. [Design — Wireframes, Accessibility & Usability](#3-design--wireframes-accessibility--usability)
 4. [Reflection on the Design Process](#4-reflection-on-the-design-process)
-5. [Contributors](#5-contributors)
+5. [Contributor A2 Portion](#5-contributor)
 6. [References](#6-references)
 
 

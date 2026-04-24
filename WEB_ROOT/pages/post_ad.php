@@ -35,6 +35,10 @@
                   <option value="">Select subcategory</option>
                 </select>
             </div>
+            <div class="form-group form-span-2">
+              <label for="adTitle">Title</label>
+              <input type="text" id="adTitle" name="adTitle" placeholder="e.g. Bike for sale">
+            </div>
             <div class="form-group price-field">
               <label for="price">Price (£)</label>
               <input type="text" id="price" name="price" placeholder="900">
@@ -143,15 +147,42 @@
       if (bigCategory.value) populateSubcategories(bigCategory.value);
     }
 
+    // Accessible inline validation helpers
+    function clearErrors() {
+      form.querySelectorAll('.error-message').forEach(function(n){ n.remove(); });
+      form.querySelectorAll('[aria-invalid="true"]').forEach(function(f){ f.removeAttribute('aria-invalid'); f.classList.remove('field-error'); f.removeAttribute('aria-describedby'); });
+    }
+
+    function showFieldError(inputEl, message) {
+      if (!inputEl) return;
+      inputEl.classList.add('field-error');
+      inputEl.setAttribute('aria-invalid', 'true');
+      var id = inputEl.id + '-error';
+      inputEl.setAttribute('aria-describedby', id);
+      var err = document.createElement('div');
+      err.className = 'error-message';
+      err.id = id;
+      err.setAttribute('role', 'alert');
+      err.innerHTML = '<span class="error-icon" aria-hidden="true">⚠</span> <span class="error-text">' + message + '</span>';
+      inputEl.parentNode.appendChild(err);
+    }
+
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      const ad_title = document.getElementById('adTitle').value.trim();
-      const ad_description = document.getElementById('description').value.trim();
-      const ad_price = document.getElementById('price').value.trim() || '0';
-      const location = document.getElementById('location').value.trim();
+      clearErrors();
+      const ad_title = (document.getElementById('adTitle') && document.getElementById('adTitle').value || '').trim();
+      const ad_description = (document.getElementById('description') && document.getElementById('description').value || '').trim();
+      const ad_price = (document.getElementById('price') && document.getElementById('price').value.trim()) || '0';
+      const location = (document.getElementById('location') && document.getElementById('location').value || '').trim();
 
-      if (!ad_title || !ad_description || !location) {
-        alert('Please complete title, description and location.');
+      var valid = true;
+      if (!ad_title) { showFieldError(document.getElementById('adTitle'), 'Title is required'); valid = false; }
+      if (!ad_description) { showFieldError(document.getElementById('description'), 'Description is required'); valid = false; }
+      if (!location) { showFieldError(document.getElementById('location'), 'Location is required'); valid = false; }
+
+      if (!valid) {
+        var firstErr = form.querySelector('.field-error');
+        if (firstErr) firstErr.focus();
         return;
       }
 

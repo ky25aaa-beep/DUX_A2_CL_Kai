@@ -33,7 +33,7 @@ $searchQuery = $_GET['q'] ?? '';
             const location = ad.location || '';
             return `
               <div class="ad-card">
-                <img src="${img}" alt="${title}">
+                <img src="${img}" alt="${title} Image of Product">
                 <div class="ad-card-body">
                   <div class="ad-card-title">${title}</div>
                   <div class="ad-card-price">£${price}</div>

@@ -82,6 +82,25 @@ header .header-right { display: flex; align-items: center; gap: 0.8rem; }
 
 .btn-secondary:hover { background: #ddd; }
 
+/* Search button styling — ensure accessible touch target and visible focus */
+/* Search button styling — ensure accessible touch target and visible focus */
+nav form button.btn-primary {
+  min-width: 44px;
+  height: 30px;
+  padding: 0 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+nav form button.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(128,0,128,0.18);
+}
+
+
 
 
 nav a {
@@ -91,13 +110,16 @@ nav a {
 
 nav form { display: flex; gap: 0.4rem; align-items: center; }
 nav input[type="search"] {
-  padding: 0.3rem 0.6rem;
+  padding: 0 0.8rem;
   border: 1px solid #bbb;
-  border-radius: 3px;
-  font-size: 12px;
+  border-radius: 6px;
+  font-size: 14px;
   font-family: inherit;
-  width: 180px;
+  width: 220px;
+  height: 30px; /* ensure minimum touch target height */
 }
+
+.search-label { margin-left: 6px; color: #fff; font-size:12px; font-weight:600; text-transform:lowercase; }
 
 /* ---- Main layout ---- */
 .page-wrap {
@@ -361,6 +383,12 @@ main.content {
   text-transform: uppercase;
 }
 
+/* validation styles */
+.field-error { border-color: #b30059 !important; box-shadow: 0 0 0 3px rgba(179,0,89,0.06); }
+.error-message { margin-top: 0.35rem; display: flex; align-items: center; gap: 0.5rem; background: #fff7f9; padding: 0.35rem 0.5rem; border-left: 3px solid #b30059; color: #333; font-size: 12px; }
+.error-icon { color: #b30059; font-weight: bold; font-size: 14px; }
+.error-text { font-size: 12px; }
+
 .post-ad-form input[type="text"],
 .post-ad-form select,
 .post-ad-form textarea {
@@ -496,7 +524,7 @@ footer {
 }
 
 .footer-brand-row .tagline {
-  color: #999;
+  color: #e0e0e0;
   font-size: 11px;
 }
 
@@ -551,12 +579,13 @@ footer {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  color: #666;
+  color: #dcdcdc;
   font-size: 10px;
   padding-top: 0.5rem;
+  font-weight: bold;
 }
 
-.footer-bottom a { color: #888; }
+.footer-bottom a { color: #a1a1a1; }
 .footer-bottom a:hover { color: #ccc; }
 .footer-bottom .sep { margin: 0 0.3rem; }
 

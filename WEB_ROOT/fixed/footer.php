@@ -1,6 +1,6 @@
 
-            <footer>
-              <div class="footer-inner">
+            <footer role="contentinfo" aria-label="Footer">
+                          <div class="footer-inner">
                 <div class="footer-brand-row">
                   <span class="site-name">craiglist</span>
                   <span class="tagline">london uk · community-powered classifieds since 1995</span>
@@ -78,10 +78,10 @@
                       <li><a href="#">help & FAQ</a></li>
                       <li><a href="#">contact us</a></li>
                     </ul>
-                    <div class="footer-social">
-                      <a href="#"><i class="icon-facebook"></i></a>
-                      <a href="#"><i class="icon-twitter"></i></a>
-                      <a href="#"><i class="icon-instagram"></i></a>
+                    <div class="footer-social" role="navigation" aria-label="Footer social links">
+                      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="icon-facebook" aria-hidden="true"></i></a>
+                      <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="icon-twitter" aria-hidden="true"></i></a>
+                      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i></a>
                     </div>
                   </div>
                 </div>
@@ -89,11 +89,11 @@
                 <div class="footer-bottom">
                   <span>© 2026 craiglist london. all rights reserved.</span>
                   <span>
-                    <a href="#">privacy</a><span class="sep">·</span>
-                    <a href="#">terms</a><span class="sep">·</span>
-                    <a href="#">cookies</a><span class="sep">·</span>
-                    <a href="#">accessibility</a><span class="sep">·</span>
-                    <a href="#">sitemap</a>
+                    <a href="/?page=in_development">privacy</a><span class="sep">·</span>
+                    <a href="/?page=in_development">terms</a><span class="sep">·</span>
+                    <a href="/?page=in_development">cookies</a><span class="sep">·</span>
+                    <a href="/?page=in_development">accessibility</a><span class="sep">·</span>
+                    <a href="/?page=in_development">sitemap</a>
                   </span>
                 </div>
               </div>
