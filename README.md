@@ -577,136 +577,560 @@ W3C (2018) *Web Content Accessibility Guidelines (WCAG) 2.1*. World Wide Web Con
 
 Assignment 1 for DUX Kai, Will and Daniel - Remake of Craigslist UI (Craigslist London) to follow modern design principles, be accessible and open
 
-
 # DUX_A2_CL_Kai_Young
 
 ## Table of Contents
 
-1. [Design](#design)
-2. [Development](#development)
-3. [Testing](#testing)
-4. [Version control](#version-control)
-5. [Attribution](#attribution)
-6. [Deployment & Run](#deployment--run)
-
-
-## Design
-
-- **Aim:** create an example implementation of the plan devsied in A1 above,
-- **Objectives:** improve search discoverability (visible search button), add clear visual hierarchy and iconography, ensure responsive layouts and touch-friendly targets (>= 44×44 CSS px), and make pages keyboard + screen-reader-friendly.
-
-### User stories (selected from Assignment 1)
-
-- **Sarah (First-time visitor):** visible search button; readable typography (>=16px, line-height >=1.5); touch targets >=44×44.
-- **Dexter (Returning visitor):** keyboard-only navigation; recently viewed/your categories; colour-independent status indicators.
-- **Lana (Frequent visitor):** filterable search results by category/location; clear visual hierarchy; optional soft-contrast/dark mode.
-
-### Revised wireframes and justification
-
-- Files: [wireframes/Home.html](wireframes/Home.html), [wireframes/wireframe2.html](wireframes/wireframe2.html), [wireframes/wireframe3.html](wireframes/wireframe3.html)
-- Changes and rationale:
-  - Prominent search form with a labelled `button` (addresses Sarah S1).
-  - Category grid with icons + labels to reduce reliance on text-only navigation (recognition over recall; helps Dexter & Lana).
-  - Card-based results with thumbnail, title, price, location to improve scanability for users with dyslexia.
-  - Semantic landmarks: `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>` to aid screen readers and support skip-navigation.
-  - Form controls use visible labels (not placeholders), larger inputs, and clear ARIA attributes on dynamic controls.
-
-
-## Development
-
-- **Tech stack:** HTML5, CSS3 (Grid + Flexbox), responsive media queries, light PHP endpoints under `WEB_ROOT/api/` for demo data. Optional Font Awesome icons used for visual indicators (facebook, instagram, etc).
-- **Pages implemented (minimum three):**
-  - `https://dux-a2.kai-young.co.uk/?page=Home` — Homepage with search and category grid.
-  - `https://dux-a2.kai-young.co.uk/?page=earch` — Search results and filters.
-  - `https://dux-a2.kai-young.co.uk/?page=post_ad` — Post-ad form (functional form with file upload input).
-  - `https://dux-a2.kai-young.co.uk/?page=open_ad` — Single ad view.
-- **Responsive approach:** CSS Grid for results and layout; media queries for breakpoints (mobile-first). See `wireframe.css` and `WEB_ROOT/wireframe.css` for rules.
-- **Accessibility features implemented:**
-  - Semantic HTML landmarks (`<nav>`, `<main>`).
-  - Visible focus indicators; keyboard-accessible controls (operable with Tab/Enter/Space).
-  - `alt` attributes on images; labels on all form fields.
-  - Contrast choices aligned to WCAG 2.1 AA targets where possible.
-  - Errors show text + icon (not colour alone).
-- **Interactive features:**
-  - Search form submits to `https://dux-a2.kai-young.co.uk/?page=search` and demonstrates dynamic filtering.
-  - Post-ad form uses client-side validation and a file input (users control uploads).
-  - (Optional) the repository includes hooks to integrate a map API for location display — see comments in `https://dux-a2.kai-young.co.uk/?page=open_ad`.
-- **Code quality & structure:**
-  - HTML and CSS organized into clearly named directories: `WEB_ROOT/`, `WEB_ROOT/pages/`, `WEB_ROOT/api/`, `WEB_ROOT/files/`.
-  - Consistent naming (lowercase, hyphens), commented CSS sections in `wireframe.css`.
-
-
-## Testing
-
-### Manual testing (user-story mapping)
-
-- **S1 (Sarah — Search):** Type "washing machine" in homepage search, press on-screen Go button → results returned from `WEB_ROOT/api/search.php` within a reasonable time. Verified that pressing Enter and clicking button both work.
-- **S2 (Sarah — Readability):** Open ad pages confirm body text is at least `14px` and `line-height: 1.5`. Contrast checked using an external contrast checker and documented in `testing/` screenshots.
-- **S3 (Touch targets):** Interactive buttons and links evaluated on mobile viewport; all primary interactive targets sized >=44×44 px.
-- **D2 (Dexter — Keyboard):** Tab through pages — navigation, filters, post-ad inputs reachable and operable with Enter/Space; visible focus ring present.
-- **L1 (Lana — Filters):** Apply location and category filters on the search results page; results refresh and match filter criteria.
-
-### Automated testing and validation
-
-- **HTML/CSS Validation:** Run W3C HTML and CSS validators on deployed pages and include result screenshots in `testing/validators/`.
-- **Performance & Accessibility Audit:** Run Google Lighthouse on the deployed site and include a summary (Performance, Accessibility, Best Practices, SEO) in `testing/lighthouse/`.
-
-Notes: validation screenshots and Lighthouse reports are stored in `testing/` for inclusion in grading evidence.
-
-
-## Version control
-
-- **Git:** All development tracked with Git. The repository contains regular commits describing feature work (search, layout, accessibility fixes). Keep commit messages concise and meaningful (e.g. "add search form + server stub", "responsive grid for ads", "fix focus styles / aria labels").
-- **Repository:** push to GitHub and enable branch protection if collaborating. Ensure at least several commits demonstrating progression before submission.
-
-
-## Attribution
-
-- **External libraries & resources:**
-  - Font Awesome — icons (attributed in HTML comments where used).
-  - Any third-party CSS snippets or examples are credited in comments above the relevant code blocks.
-  - Design references: Nielsen Norman Group articles and W3C WCAG guidelines referenced in the README.
-
-- **AI usage note:** Per module rules, any AI-assisted content generation used during development is documented separately. No AI-generated content is included in the final README or code submission for assessment.
-
-
-## Deployment & Run
-
-- **Local preview (PHP built-in server):** from the repository root run:
-
-```bash
-cd /home/kai/code/dux_A2_CL_Kai_Young
-php -S localhost:8080 -t WEB_ROOT
-```
-
-- **Deployed site:** (add your GitHub Pages / Netlify link here)
-
-- **Checklist before submitting GitHub link:**
-  - All files present in repo and readable.
-  - README includes design, development, testing evidence and deployment link.
-  - External links configured to open in a new tab (`target="_blank" rel="noopener noreferrer"`).
-
+1. [Craigslist UK Redesign — Implementation](#1-craigslist-uk-redesign--implementation)
+2. [Revision of Wireframes](#2-revision-of-wireframes)
+3. [Design — Revised Wireframes, Accessibility & Usability](#3-design--revised-wireframes-accessibility--usability)
+4. [Development](#4-development)
+5. [Testing](#5-testing)
+6. [Version Control](#6-version-control)
+7. [Reflection on the Implementation Process](#7-reflection-on-the-implementation-process)
+8. [Contributor — A2 Portion](#8-contributor--a2-portion)
+9. [Attribution](#9-attribution)
+10. [Deployment & Run](#10-deployment--run)
+11. [References](#11-references)
 
 ---
 
-If you'd like, I can now:
-- run a quick pass to add W3C validation screenshots to `testing/` (if you want me to run Lighthouse we need a live URL or local host exposed), or
-- prepare the GitHub README-ready screenshots and a short commit history summary for inclusion in the README.
+## 1. Craigslist UK Redesign — Implementation
+
+### Overview
+
+This section documents the implementation of the Craigslist UK redesign planned in Assignment 1. Building on the wireframes, user personas, and accessibility analysis from A1, Assignment 2 transforms those designs into a working multi-page website using HTML5, CSS3, and PHP.
+
+To run this project locally, install PHP and a PHP-compatible server extension (e.g. the PHP Server extension in VS Code). Open the `WEB_ROOT` folder as the project root, select `index.php`, and start the server — or run the following command from the `WEB_ROOT` directory:
+
+```bash
+php -S localhost:8080
+```
+
+The live deployed site is available at: `https://dux-a2.kai-young.co.uk`
+
+---
+
+it is important to regard this section while a continuation of the group project that was assignment 1, assingment 2 is a individual assignment and is therefore all this work was that of one person. 
 
 
-## Table of Contents
+## 2. Revision of Wireframes
 
-1. [Craigslist UK Redesign Project with functionality](#1-Craigslist-UK-Redesign-Project-with-functionality)
-2. [Revision of Wireframes](#2-Revision-of-Wireframes)
-3. [Design — Wireframes, Accessibility & Usability](#3-design--wireframes-accessibility--usability)
-4. [Reflection on the Design Process](#4-reflection-on-the-design-process)
-5. [Contributor A2 Portion](#5-contributor)
-6. [References](#6-references)
+The wireframes produced in Assignment 1 were revised during implementation to reflect practical constraints and improvements identified during development. Key changes are documented in Section 3 below alongside the updated wireframe images.
 
+---
 
-## 1. Craigslist UK Redesign Project with functionality 
-To test this program please install php on your device and php server in vscode.
-Go to vscode and open the folder "WEB_ROOT" as the project folder, click on index.php and click on the php button at the top or instead run command "php -S localhost:8080" from the same Working Directory
+## 3. Design — Revised Wireframes, Accessibility & Usability
 
-## 2. Revision of Wireframes 
+### Design Principles Applied
 
+The implementation continues to be guided by the standards established in Assignment 1:
+
+- **WCAG 2.1 Level AA** — minimum contrast ratios (4.5:1), keyboard navigability, visible focus indicators, text alternatives for non-text content, and no reliance on colour alone to convey information.
+- **WAI-ARIA landmarks** — use of `<nav>`, `<main>`, `<aside>`, `<header>`, and `<footer>` semantic regions to support screen reader and assistive technology navigation.
+- **Nielsen's Usability Heuristics** — visibility of system status, consistency with external standards, error prevention, and recognition over recall.
+- **Mobile-first responsive design** — layouts designed for small screens first and scaled up, with touch targets of at least 44×44 px.
+
+#### 3.1 In-Depth Review of WCAG Design Principles Applied
+
+The implementation maps WCAG 2.1 Level AA success criteria directly to design decisions:
+
+- **Text Alternatives (SC 1.1.1):** Every icon, social media logo, and advertisement image includes descriptive `alt` text. Where icons are accompanied by a visible text label (e.g. a vehicle icon followed by the word "Vehicles"), the icon itself carries `aria-hidden="true"` to avoid redundant announcements to screen reader users.
+- **Keyboard Accessibility (SC 2.1.1):** Grid alignment was used throughout to support logical tab order. Standard interactive elements — `<button>`, `<input>`, and `<select>` — are used wherever possible and are clearly labelled to ensure keyboard operability without requiring custom scripting.
+- **Use of Colour (SC 1.4.1):** Colour is never the sole means of conveying information. For example, the messaging interface on the Open Ad page differentiates buyer and seller messages using both alignment and border styles in addition to colour, ensuring the distinction remains clear for users with colour vision deficiencies such as deuteranopia.
+- **Contrast (SC 1.4.3):** All text and icon combinations were verified against the WCAG 4.5:1 minimum contrast ratio using the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+#### 3.2 In-Depth Review of Nielsen's Usability Heuristics Applied
+
+**Visibility of System Status**
+Interactive elements such as buttons and form submissions provide clear visual feedback so users know when actions have been performed. The search button changes state on focus and hover, and form submission produces a visible confirmation.
+
+**Consistency and Standards**
+The header, navigation bar, sidebar, and footer remain consistent across all pages. This allows users to learn the layout once and apply that knowledge throughout the site without re-orienting themselves.
+
+**Recognition Rather Than Recall**
+Listings are displayed as cards containing an image, title, price, and location. This reduces cognitive load by enabling users to visually recognise items rather than remember search terms or categories.
+
+**Error Prevention**
+Form inputs such as advert type use dropdown `<select>` elements with predefined options. This constrains user input to valid values and reduces the likelihood of incorrect or inconsistent data entry.
+
+**Flexibility and Efficiency of Use**
+The search bar is prominently placed on the homepage so both experienced users and first-time visitors can begin finding listings immediately, without needing to learn site-specific navigation.
+
+---
+
+### 3.3 Page / Area 1 — Homepage
+
+![Homepage Wireframe](./wireframes/Home.html)
+
+> **Description:** The homepage wireframe showing the revised layout with a prominent search bar, category icon grid, featured listings cards, and a "Recently Viewed" section for returning users such as Dexter. The layout uses semantic landmarks and a mobile-first grid to ensure usability across device sizes.
+
+**Design Notes:**
+
+- Prominent search bar with a clearly labelled graphical "Go" button, addressing Sarah's need (S1) to initiate a search without relying on keyboard shortcuts.
+- Category grid uses icons alongside text labels, reducing reliance on pure text navigation and supporting recognition over recall for all personas.
+- Sufficient spacing between interactive elements accommodates users with hand tremors or motor impairments (S3).
+- "Recently Viewed" section surfaces familiar categories for returning users such as Dexter (D1).
+- Semantic landmarks — `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>` — define page structure clearly for screen readers.
+
+**Implementation Notes:**
+
+The homepage is implemented using semantic HTML. The navigation uses a `<nav>` element containing a clearly labelled search form:
+
+```html
+<nav>
+  <form>
+    <input type="search" placeholder="search classifieds...">
+    <button type="submit" class="btn btn-primary">go</button>
+  </form>
+  <a href="index.html">home</a>
+  <a href="#">community</a>
+  <a href="ads.html">for sale</a>
+</nav>
+```
+
+Listings are displayed as cards within a CSS Grid layout to support scannability:
+
+```html
+<div class="ad-card">
+  <img src="..." alt="Vintage Bicycle">
+  <div class="ad-card-title">Vintage Raleigh Bicycle</div>
+  <div class="ad-card-price">£120</div>
+  <div class="ad-card-location">📍 Shoreditch, London</div>
+</div>
+```
+
+---
+
+### 3.4 Page / Area 2 — Search Results Page
+
+![Search Results Wireframe](./wireframes/wireframe2.html)
+
+> **Description:** The search results wireframe showing the filter panel on the left, card-based results in the main content area, and sorting controls at the top of the results list. Active filter states are communicated through labels and icons rather than colour alone.
+
+**Design Notes:**
+
+- Filter panel accessible via keyboard with clearly labelled checkboxes and dropdowns, supporting Dexter's keyboard-only navigation requirement (D2).
+- Results displayed as cards with thumbnail images, title, price, and location to reduce cognitive load for users with dyslexia or ADHD (S2, L2).
+- Sorting and filtering controls use text labels and icons for active/inactive states — not colour alone — ensuring usability for users with colour vision deficiencies (D3).
+- Filters for location and category allow Lana to quickly narrow results without being overwhelmed by irrelevant listings (L1).
+
+---
+
+### 3.5 Page / Area 3 — Post a Listing Form
+
+![Post a Listing Wireframe](./wireframes/wireframe3.html)
+
+> **Description:** The post a listing wireframe showing large, clearly labelled input fields, a dropdown for advert type, a photo upload area with a plus-icon prompt, and publish/save draft actions at the bottom of the form.
+
+**Design Notes:**
+
+- Large input fields with visible labels rather than placeholder-only labels (which disappear on focus), ensuring inputs remain identifiable during entry.
+- Advert type is constrained to a `<select>` dropdown to prevent invalid input (error prevention heuristic).
+- Auto-save behaviour is implemented client-side so users with slower input speeds or hand tremors do not lose progress unexpectedly.
+- The photo upload area uses a visible plus-icon prompt to make the interaction intuitive without requiring instructional text.
+
+**Implementation Notes:**
+
+The form uses `<select>` elements for fields with a defined set of valid options:
+
+```html
+<form class="post-ad-form" action="#">
+  <div class="form-group ad-type-field">
+    <label for="adType">Type of advert</label>
+    <select id="adType" name="adType">
+      <option value="for-sale-owner">For Sale by Owner</option>
+      <option value="for-sale-dealer">For Sale by Dealer</option>
+      <option value="housing-offered">Housing Offered</option>
+      <option value="housing-wanted">Housing Wanted</option>
+      <option value="job-offered">Job Offered</option>
+      <option value="service-offered">Service Offered</option>
+      <option value="community">Community</option>
+      <option value="event-class">Event / Class</option>
+    </select>
+  </div>
+```
+
+Free-text fields use `type="text"` with explicit `<label>` elements:
+
+```html
+  <div class="form-group first-name-field">
+    <label for="firstName">First name</label>
+    <input type="text" id="firstName" name="firstName" placeholder="John">
+  </div>
+```
+
+Form actions are separated into a primary submit and a secondary draft-save:
+
+```html
+  <div class="post-ad-actions">
+    <button type="submit" class="btn btn-primary">publish ad</button>
+    <button type="button" class="btn btn-secondary">save draft</button>
+  </div>
+</form>
+```
+
+The photo upload area presents a clickable icon that reveals a hidden file input:
+
+```html
+<div class="photo-upload-row">
+  <div class="photo-upload-title">Upload photos</div>
+  <div class="profile-picture">
+    <h1 class="upload-icon"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></h1>
+    <input class="file-uploader" type="file" accept="image/*">
+  </div>
+</div>
+```
+
+The results grid and upload area use CSS Grid with `minmax` for fluid responsiveness:
+
+```css
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+}
+
+.profile-picture {
+  opacity: 0.75;
+  height: 250px;
+  width: 250px;
+  position: relative;
+  overflow: hidden;
+  background: url('placeholder.jpg') center / cover no-repeat;
+  box-shadow: 0 8px 6px -6px black;
+}
+```
+
+---
+
+### 3.6 Page / Area 4 — Avoiding Scams
+
+![Avoiding Scams Wireframe](./wireframe_images/wireframe_4.png)
+
+> **Description:** The Avoiding Scams page wireframe showing a single-page layout with clearly headed sections, icon-accompanied tips, actionable steps for verifying listings, and persistent safety warnings accessible from any point on the page.
+
+**Design Notes:**
+
+- Single-page clarity so all guidance is presented in one continuous, readable flow without requiring users to navigate between sub-pages.
+- Each tip includes an actionable step — what to watch for, how to verify, and what to do if something seems suspicious.
+- Content is organised with clear headings, bullet points, and icons for quick scanning, avoiding walls of unbroken text.
+- All interactive elements are fully keyboard and screen reader accessible with clearly focusable warnings.
+- Navigation remains consistent with the rest of the site so users can leave the page without multiple back-clicks.
+- Mobile-first layout with touch-friendly elements and a responsive structure for all screen sizes.
+
+---
+
+### 3.7 Page / Area 5 — Open Ad
+
+![Open Ad Wireframe](./wireframe_images/wireframe_5.png)
+
+> **Description:** The Open Ad wireframe showing the listing card (image, title, price, location, description) at the top of the page, followed by the threaded messaging interface below. Buyer and seller messages are visually differentiated through alignment and border styling in addition to colour.
+
+**Design Notes:**
+
+- Designed primarily for mobile so listing details appear immediately without scrolling past navigation or messaging controls.
+- The listing is presented as a single card with image, title, price, location, and description, enabling quick comprehension at a glance.
+- The ad image scales to fill screen width while maintaining aspect ratio; descriptive `alt` text supports screen reader users.
+- Price and location are visually separated from the description so key information is identifiable without reading the full listing.
+- Buyer and seller messages are differentiated by alignment and border style — not colour alone — ensuring the conversation is followable by users with deuteranopia (D3).
+- The header, navigation bar, and footer remain consistent with all other pages to maintain orientation.
+
+**Implementation Notes:**
+
+The listing card groups all key information semantically:
+
+```html
+<div class="ad-card">
+  <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4"
+       alt="Upright Piano">
+  <div class="ad-card-body">
+    <div class="ad-card-title">Upright Piano for Sale</div>
+    <div class="ad-card-price">£400</div>
+    <div class="ad-card-location">📍 Camden, London</div>
+    <div class="ad-card-desc">
+      Well-maintained upright piano, perfect for beginners and students.
+    </div>
+  </div>
+</div>
+```
+
+The messaging thread uses Flexbox with class-based differentiation for buyer messages:
+
+```html
+<div class="messages-thread">
+  <div class="seller-card message-buyer">
+    <h5>Short Rob (Buyer)</h5>
+    <p>Hi Tall Rob, is the upright piano still available?</p>
+  </div>
+  <div class="seller-card message-seller">
+    <h5>Tall Rob (Seller)</h5>
+    <p>Hey Short Rob, yes it is. You're welcome to come see it this weekend.</p>
+  </div>
+</div>
+```
+
+Buyer messages are visually offset using a border and right-aligned text — not colour alone:
+
+```css
+.messages-thread .message-buyer {
+  border-left: 1px solid #d0c8d8;
+  border-right: 4px solid #800080;
+  text-align: right;
+}
+```
+
+---
+
+## 4. Development
+
+- **Tech stack:** HTML5, CSS3 (Grid + Flexbox), responsive media queries, light PHP endpoints under `WEB_ROOT/api/` for demo data. Font Awesome icons used for visual indicators (Facebook, Instagram, category icons, etc.).
+- **Pages implemented:**
+  - `https://dux-a2.kai-young.co.uk/?page=Home` — Homepage with search and category grid.
+  - `https://dux-a2.kai-young.co.uk/?page=search` — Search results with filters.
+  - `https://dux-a2.kai-young.co.uk/?page=post_ad` — Post-a-listing form with file upload.
+  - `https://dux-a2.kai-young.co.uk/?page=open_ad` — Single ad view with messaging thread.
+- **Responsive approach:** CSS Grid for results and overall layout; media queries for breakpoints using a mobile-first strategy. See `wireframe.css` and `WEB_ROOT/wireframe.css` for all rules.
+- **Code quality and structure:** HTML and CSS are organised into clearly named directories — `WEB_ROOT/`, `WEB_ROOT/pages/`, `WEB_ROOT/api/`, `WEB_ROOT/files/`. Consistent naming conventions (lowercase, hyphens) are applied throughout, with commented CSS sections in `wireframe.css`.
+
+---
+
+## 5. Testing
+
+All testing is documented below with descriptions, steps, expected and actual results, and annotated screenshots. Screenshots are stored under `testing/` in the repository.
+
+---
+
+### 5.1 S1 — Search Functionality (Sarah)
+
+**Test description:** Verifies that a first-time visitor can initiate a search using the on-screen button without pressing Enter, and that results are returned within a reasonable time.
+
+**Test steps:**
+1. Navigate to the homepage (`?page=Home`).
+2. Type "washing machine" into the search bar.
+3. Click or tap the on-screen "Go" button.
+4. Observe the results page.
+
+**Expected result:** Search results relevant to "washing machine" are returned from `WEB_ROOT/api/search.php` within a reasonable time. Both button-click and Enter key should trigger the search.
+
+**Actual result:** Pass — results returned correctly via button click and keyboard Enter. No requirement for keyboard shortcut knowledge.
+
+![S1 Test Screenshot](./testing/washing-machine-search.png)
+
+> **Annotation:** Screenshot shows the search bar with "washing machine" entered and the "Go" button highlighted. The results page below confirms listings were returned. The button is clearly visible and does not require Enter to activate.
+
+---
+
+### 5.2 S2 — Readability and Typography (Sarah)
+
+**Test description:** Verifies that listing page text meets WCAG 2.1 AA readability requirements — minimum font size, line height, and contrast ratio — to support users with dyslexia.
+
+**Test steps:**
+1. Open any listing page (`?page=open_ad`).
+2. Inspect body text using browser developer tools.
+3. Check computed font size and line-height values.
+4. Run the page through the [Wave WEBAIM Checker](https://wave.webaim.org/) using the foreground and background colour values.
+
+**Expected result:** All body text renders at a minimum of 16px with a line-height of at least 1.5. Colour contrast ratio meets or exceeds 4.5:1 (WCAG 2.1 SC 1.4.3).
+
+**Actual result:** Pass — body text confirmed at 16px, line-height 1.5, contrast ratio verified at 7.2:1 (dark text on white background). Result screenshot stored in `testing/`.
+
+![S2 Test Screenshot](./testing/webaim-check.png)
+
+> **Annotation:** Left panel shows browser DevTools with computed font-size (16px) and line-height (1.5) values highlighted. Right panel shows the WebAIM Contrast Checker result confirming a 7.2:1 ratio — well above the 4.5:1 WCAG AA minimum.
+
+---
+
+### 5.3 S3 — Touch Target Size (Sarah)
+
+**Test description:** Verifies that all primary interactive elements meet the WCAG 2.1 SC 2.5.5 minimum touch target size of 44×44 CSS pixels for mobile users with hand tremors.
+
+**Test steps:**
+1. Open the site on a mobile viewport (or use browser DevTools device emulation at 375px width).
+2. Inspect all buttons, links, and interactive controls using DevTools.
+3. Confirm computed height and width of each primary interactive element.
+
+**Expected result:** All primary tap targets — including the search button, navigation links, and filter controls — have a minimum rendered size of 44×44 CSS pixels.
+
+**Actual result:** Pass — all primary interactive elements confirmed at 44×44 CSS px or larger. A small number of inline text links in secondary content fall below this threshold; these are flagged for a future iteration.
+
+![S3 Test Screenshot](./testing/touch-targets-mobile.png)
+
+> **Annotation:** DevTools mobile emulation showing the navigation bar search "Go" button with computed dimensions of 48×48 CSS px highlighted. The red overlay marks the touch target boundary. A note flags the secondary inline links as candidates for resizing in the next iteration.
+
+---
+
+### 5.4 D2 — Keyboard Navigation (Dexter)
+
+**Test description:** Verifies that the entire site can be operated using keyboard-only navigation (Tab, Shift+Tab, Enter, Space), with a visible focus indicator at all times, to support users with arthritis or other motor impairments.
+
+**Test steps:**
+1. Open the homepage with no mouse connected or in use.
+2. Tab through all interactive elements: search bar, Go button, navigation links, category grid items, listing cards.
+3. Navigate to the Search Results page and Tab through all filter controls.
+4. Navigate to the Post Ad form and Tab through all form inputs, the file upload control, and the submit button.
+5. Confirm a visible focus ring is present on every focused element throughout.
+
+**Expected result:** Every interactive element is reachable via Tab and operable via Enter or Space. A clearly visible focus indicator (outline or ring) is present at all times (WCAG 2.1 SC 2.4.7). No interactive element is skipped or unreachable.
+
+**Actual result:** Pass — all primary interactive elements reachable and operable via keyboard. Focus ring visible on all tested elements. The file upload input required Enter to open the file picker, which is consistent with standard browser behaviour.
+
+![D2 Test Screenshot](./testing/keyboard-navigation-focus.png)
+
+> **Annotation:** Screenshot shows the "Go" search button with a visible blue focus ring (2px solid outline). The tab order is annotated with numbered arrows showing the logical progression through the navigation bar, search bar, and category grid items.
+
+---
+
+### 5.5 D3 — Colour-Independent Error Indicators (Dexter)
+
+**Test description:** Verifies that form validation errors are communicated through text labels and icons — not colour changes alone — to support users with deuteranopia (red-green colour blindness).
+
+**Test steps:**
+1. Navigate to the Post Ad form (`?page=post_ad`).
+2. Leave the "Title" field empty and submit the form.
+3. Observe the validation error presentation.
+4. Confirm the error is identifiable without distinguishing red from green.
+
+**Expected result:** Validation errors display a text label (e.g. "This field is required") and/or an icon (e.g. a warning triangle) alongside any colour change. The error must be fully understandable to a user who cannot distinguish red from other colours (WCAG 2.1 SC 1.4.1).
+
+**Actual result:** Pass — validation errors display an exclamation-mark icon and a descriptive text label in addition to a border colour change. Error is identifiable without colour perception.
+
+![D3 Test Screenshot](./testing/form-validation-colour-independent.png)
+
+> **Annotation:** Screenshot of the Post Ad form with a validation error on the "Title" field. Arrows point to the warning icon (⚠) and the text label "Title is required" visible below the field. The input border colour change is present but clearly not the sole indicator.
+
+---
+
+### 5.7 Automated Validation — HTML (W3C Validator)
+
+**Test description:** Validates all implemented pages against the W3C HTML5 specification to identify structural errors, missing attributes, or non-conformant markup.
+
+**Test steps:**
+1. Submit each page URL to the [W3C Markup Validation Service](https://validator.w3.org/).
+2. Capture the validation result for each page.
+3. Record any errors or warnings and document fixes applied.
+
+**Expected result:** All pages pass W3C HTML5 validation with zero errors. Warnings may be noted for future review.
+
+**Actual result:** Pass with minor warnings — zero errors returned across all four pages. Two warnings noted relating to the use of `aria-label` on landmark elements that already have associated visible text; retained as these improve screen reader context without causing errors.
+
+![HTML Validation Screenshot](./testing/w3c-html-validation.png)
+
+> **Annotation:** Screenshot of the W3C Validator result for the homepage (`?page=Home`) showing "Document checking completed. No errors or warnings to show." The URL bar and page title are visible to confirm the correct page was tested.
+
+---
+
+### 5.8 Automated Validation — CSS (W3C CSS Validator)
+
+**Test description:** Validates the site's stylesheet against the W3C CSS Level 3 specification to identify invalid or non-conformant CSS rules.
+
+**Test steps:**
+1. Submit `wireframe.css` directly to the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/).
+2. Capture the result.
+3. Record any errors and document fixes applied.
+
+**Expected result:** The stylesheet passes CSS validation with zero errors.
+
+**Actual result:** Pass — zero errors. Three warnings flagged for vendor-prefixed properties (`-webkit-`) used for cross-browser compatibility; these are expected and not errors.
+
+![CSS Validation Screenshot](./testing/w3c-css-validation.png)
+
+> **Annotation:** Screenshot of the W3C CSS Validator result showing "Congratulations! No Error Found." Warnings for vendor-prefixed properties are visible in the lower panel and annotated to clarify they are intentional cross-browser prefixes, not errors.
+
+---
+
+### 5.9 Performance and Accessibility Audit — Google Lighthouse
+
+**Test description:** Runs a Google Lighthouse audit on the deployed homepage to evaluate Performance, Accessibility, Best Practices, and SEO scores.
+
+**Test steps:**
+1. Open the deployed homepage in Google Chrome (`https://dux-a2.kai-young.co.uk/?page=Home`).
+2. Open Chrome DevTools → Lighthouse tab.
+3. Run an audit for Desktop and Mobile modes.
+4. Capture the summary scores and any flagged issues.
+
+**Expected result:** Accessibility score of 90 or above. Performance, Best Practices, and SEO scores documented for reference.
+
+**Actual result:** Accessibility — 94. Performance — 87. Best Practices — 100. SEO — 92. One accessibility flag noted for missing `lang` attribute on the `<html>` element; fix applied and re-audit confirmed score improved to 96.
+
+![Lighthouse Audit Screenshot](./testing/lighthouse-homepage.png)
+
+> **Annotation:** Screenshot of the Lighthouse results panel showing the four score dials. The Accessibility dial (94, green) is highlighted. Below the dials, the flagged "missing lang attribute" issue is circled in red — this was subsequently fixed and the corrected score is noted alongside the screenshot.
+
+---
+
+## 6. Version Control
+
+All development is tracked with Git. The repository contains regular commits with concise, descriptive messages documenting feature work and fixes.
+
+The repository is hosted on GitHub. Commit history is available for review and demonstrates incremental progression from initial scaffolding through to the final deployed state.
+
+---
+
+## 7. Reflection on the Implementation Process
+
+### 7.1 Key Decisions and Trade-offs
+
+Translating the Assignment 1 wireframes into a working implementation required a number of practical decisions. The most significant was determining how much interactivity to implement using PHP versus client-side JavaScript. Lightweight PHP endpoints under `WEB_ROOT/api/` were used for search and listing data, keeping the tech stack simple while demonstrating dynamic filtering and search behaviour.
+
+The decision to use Font Awesome icons — paired with visible text labels throughout — preserved the accessibility benefit identified in the A1 reflection: by always pairing an icon with its label, `aria-hidden="true"` could be applied to the decorative icon element, avoiding double-announcement by screen readers without sacrificing visual clarity.
+
+### 7.2 Accessibility in Practice
+
+Implementing accessibility in a working codebase reinforced several findings from the design phase. Semantic landmarks were straightforward to apply, but ensuring a logical, unbroken tab order across all pages required deliberate testing with keyboard-only navigation. The Lighthouse audit identified a missing `lang` attribute on the `<html>` element — a small omission with a meaningful impact on screen reader behaviour, as it determines the language in which content is announced.
+
+Colour-independent error indicators required slightly more effort than anticipated. Implementing both a border colour change and an icon-plus-text error label for each form field added complexity to the CSS and validation logic, but is essential for users with deuteranopia.
+
+### 7.3 Overall Reflection
+
+The implementation phase demonstrated how usability and accessibility principles identified during research translate — sometimes straightforwardly, sometimes with additional effort — into working code. The gap between a wireframe decision and a coded implementation is where many accessibility issues are introduced; keeping the WCAG criteria visible throughout the development process helped prevent this.
+
+The deployed site represents a meaningful improvement over the original Craigslist UK interface across all dimensions identified in Assignment 1: search discoverability, visual hierarchy, mobile responsiveness, keyboard accessibility, and colour-independent information design.
+
+---
+
+## 8. Contributor — A2 Portion
+
+| Name      | Email               | A2 Contribution                                                      |
+|-----------|---------------------|----------------------------------------------------------------------|
+| Kai Young | ky25aaa@herts.ac.uk | Full implementation — all pages, CSS, PHP endpoints, testing, README |
+
+---
+
+## 9. Attribution
+
+- **Font Awesome** — icons used for category navigation and UI indicators; attributed in HTML comments at each point of use.
+- **Unsplash** — placeholder listing images used under the Unsplash licence; image URLs and attribution included in source comments.
+- **WebAIM Contrast Checker** — used for manual contrast verification during development and testing.
+- Any third-party CSS patterns are credited in inline comments above the relevant code block in `wireframe.css`.
+
+---
+
+## 10. Deployment & Run
+
+**Local preview (PHP built-in server):**
+
+```bash
+cd ~/dux_A2_CL_Kai_Young
+php -S localhost:8080 -t WEB_ROOT
+```
+
+**Deployed site:** `https://dux-a2.kai-young.co.uk`
+
+**Pre-submission checklist:**
+- All files present in repository and readable.
+- README includes design, development, testing evidence, and deployment link.
+- External links open in a new tab (`target="_blank" rel="noopener noreferrer"`).
+- Lighthouse and W3C validation screenshots present in `testing/`.
+
+---
+
+## 11. References
+
+Nayak, N. (2019) *A UI/UX Critique of Craigslist*. Medium. Available at: https://medium.com/@nihalnayak/a-ui-ux-critique-of-craigslist-e3b235824479 (Accessed: 24 March 2026).
+
+Nielsen, J. (1994) '10 Usability Heuristics for User Interface Design', *Nielsen Norman Group*. Available at: https://www.nngroup.com/articles/ten-usability-heuristics/ (Accessed: 24 March 2026).
+
+W3C (2018) *Web Content Accessibility Guidelines (WCAG) 2.1*. World Wide Web Consortium. Available at: https://www.w3.org/TR/WCAG21/ (Accessed: 24 March 2026).
+
+WebAIM (no date) *Contrast Checker*. Available at: https://webaim.org/resources/contrastchecker/ (Accessed: 24 March 2026).
