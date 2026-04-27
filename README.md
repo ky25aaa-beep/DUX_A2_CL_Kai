@@ -1120,7 +1120,7 @@ php -S localhost:8080 -t WEB_ROOT
 **Pre-submission checklist:**
 - All files present in repository and readable.
 - README includes design, development, testing evidence, and deployment link.
-- External links open in a new tab (`target="_blank" rel="noopener noreferrer"`).
+- External links open in a new tab (`target="_blank""`).
 - Lighthouse and W3C validation screenshots present in `testing/`.
 
 ---

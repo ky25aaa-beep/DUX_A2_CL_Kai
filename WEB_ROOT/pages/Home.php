@@ -36,7 +36,7 @@
       <!-- LOCAL ADS -->
       <div class="content-section">
         <div class="section-header">
-          <h2 href="?page=local_ads">Local Ads</h2>
+          <h2 onclick="window.location.href='/?page=local_ads'">Local Ads</h2>
         </div>
         <div class="ads-grid" role="region" aria-label="Local ads">
 
