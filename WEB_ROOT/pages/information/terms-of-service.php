@@ -40,9 +40,9 @@
 					<p>For further details and related policies, please consult:</p>
 					<ul style="margin-left:1.5rem; margin-bottom:1rem;">
 						<li><a href="/pages/information/terms-of-service.php">Full Terms of Use (this page)</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="#">Prohibited Content</a></li>
-						<li><a href="#">DMCA / Copyright</a></li>
+						<li><a href="/?page=in_development&undevelopedname=Info_PrivacyPolicy">Privacy Policy</a></li>
+						<li><a href="/?page=in_development&undevelopedname=Info_ProhibitedContent">Prohibited Content</a></li>
+						<li><a href="/?page=in_development&undevelopedname=Info_DMCA_Copyright">DMCA / Copyright</a></li>
 					</ul>
 					<p>If you have questions about these Terms, please contact us through the site.</p>
 				</div>

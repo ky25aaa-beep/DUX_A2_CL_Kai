@@ -47,7 +47,7 @@
               <div class="ad-card-price">£900/mo</div>
               <div class="ad-card-location">📍 Brixton, London</div>
               <div class="ad-card-desc">Top-floor flat, bright & airy, 5 min walk to Brixton station. No DSS.</div>
-              <a href="#" class="btn btn-primary">contact landlord</a>
+              <a href="/?page=in_development&undevelopedname=Info_ContactLandlord" class="btn btn-primary">contact landlord</a>
             </div>
           </div>
 
@@ -58,7 +58,7 @@
               <div class="ad-card-price">£10/hr</div>
               <div class="ad-card-location">📍 Hackney, London</div>
               <div class="ad-card-desc">Reliable, insured, DBS-checked. Solo walks available. Any breed welcome.</div>
-              <a href="#" class="btn btn-primary">get in touch</a>
+              <a href="/?page=in_development&undevelopedname=Info_GetInTouch" class="btn btn-primary">get in touch</a>
             </div>
           </div>
 
@@ -69,7 +69,7 @@
               <div class="ad-card-price">£12/class</div>
               <div class="ad-card-location">📍 Peckham, London</div>
               <div class="ad-card-desc">Morning & evening sessions, small groups max 8 people. First class free.</div>
-              <a href="#" class="btn btn-primary">book now</a>
+              <a href="/?page=in_development&undevelopedname=Info_BookNow" class="btn btn-primary">book now</a>
             </div>
           </div>
 
@@ -80,7 +80,7 @@
               <div class="ad-card-price">£25/hr</div>
               <div class="ad-card-location">📍 Lewisham, London</div>
               <div class="ad-card-desc">Plumbing, electrics, painting, flat-pack assembly. Fully insured, refs available.</div>
-              <a href="#" class="btn btn-primary">call Dave</a>
+              <a href="/?page=in_development&undevelopedname=Info_CallDave" class="btn btn-primary">call Dave</a>
             </div>
           </div>
 

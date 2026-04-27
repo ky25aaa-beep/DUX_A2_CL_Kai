@@ -20,11 +20,11 @@
         </form>
         <a href="/?page=Home">home</a>
         <a href="/?page=local_ads">local ads</a>
-        <a href="/?page=in_development">for sale</a>
-        <a href="/?page=in_development">housing</a>
-        <a href="/?page=in_development">jobs</a>
-        <a href="/?page=in_development">services</a>
-        <a href="/?page=in_development">help</a>
+        <a href="/?page=in_development&undevelopedname=ForSale">for sale</a>
+        <a href="/?page=in_development&undevelopedname=Housing">housing</a>
+        <a href="/?page=in_development&undevelopedname=Jobs">jobs</a>
+        <a href="/?page=in_development&undevelopedname=Services">services</a>
+        <a href="/?page=in_development&undevelopedname=Help">help</a>
       </nav>
 
 <script>

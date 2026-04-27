@@ -25,19 +25,19 @@
         </ul>
 
         <h4 style="margin-top:1rem; color:#800080;">📞 If You’ve Been Scammed</h4>
-        <p>Stop all communication. Contact your bank immediately if you shared financial details. Report the incident to <a href="#">Action Fraud</a> (UK) and to Craigslist by using the “flag” link on the posting. You can also forward scam emails to <a href="mailto:spam@craigslist.org">spam@craigslist.org</a>.</p>
+        <p>Stop all communication. Contact your bank immediately if you shared financial details. Report the incident to <a href="/?page=in_development&undevelopedname=Info_ActionFraud">Action Fraud</a> (UK) and to Craigslist by using the “flag” link on the posting. You can also forward scam emails to <a href="mailto:spam@craigslist.org">spam@craigslist.org</a>.</p>
 
         <p style="margin-top:1rem; padding:0.5rem; background:#f0edf4; border-left:4px solid #800080;">
             <strong>Remember:</strong> Craigslist does not get involved in transactions, does not offer buyer protection, and never guarantees deals. Keep everything local and in person.
         </p>
         <div class="content-section" style="margin-top:2rem;">
           <h4 style="color:#800080;">🚨 Reporting & Safety Resources</h4>
-          <p>If your personal information has been posted on craigslist, use our <a href="#">online form</a> to report the issue. Ask any users contacting you to flag inappropriate postings.</p>
+          <p>If your personal information has been posted on craigslist, use our <a href="/?page=in_development&undevelopedname=Info_OnlineForm">online form</a> to report the issue. Ask any users contacting you to flag inappropriate postings.</p>
           <p>If you are receiving unwanted messages or suspect that something is a scam, please use the resources below for assistance:</p>
           <ul style="margin-left:1.5rem; margin-bottom:1rem;">
-            <li><a href="#">email harassment</a></li>
-            <li><a href="#">phone harassment</a></li>
-            <li><a href="#">reporting scams</a></li>
+            <li><a href="/?page=in_development&undevelopedname=Info_EmailHarassment">email harassment</a></li>
+            <li><a href="/?page=in_development&undevelopedname=Info_PhoneHarassment">phone harassment</a></li>
+            <li><a href="/?page=in_development&undevelopedname=Info_ReportingScams">reporting scams</a></li>
           </ul>
           <p>Please consider contacting law enforcement if you feel threatened.</p>
         </div>
