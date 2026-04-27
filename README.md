@@ -1077,9 +1077,9 @@ The decision to use Font Awesome icons — paired with visible text labels throu
 
 ### 7.2 Accessibility in Practice
 
-Implementing accessibility in a working codebase reinforced several findings from the design phase. Semantic landmarks were straightforward to apply, but ensuring a logical, unbroken tab order across all pages required deliberate testing with keyboard-only navigation. The Lighthouse audit identified a missing `lang` attribute on the `<html>` element — a small omission with a meaningful impact on screen reader behaviour, as it determines the language in which content is announced.
+Implementing accessibility in a working codebase reinforced several findings from the design phase. Semantic landmarks were straightforward to apply, but ensuring a logical, unbroken tab order across all pages required deliberate testing with keyboard-only navigation. The first wave check identified missing atria elements across the page, while they were used properly inside the sidepanel, footer, and navbar. They were lacking in the main page views of the Home Page but also open_ad and search.
 
-Colour-independent error indicators required slightly more effort than anticipated. Implementing both a border colour change and an icon-plus-text error label for each form field added complexity to the CSS and validation logic, but is essential for users with deuteranopia.
+Colour-independent error indicators required slightly more effort than anticipated. Implementing both a border colour change and an icon-plus-text error label for each form field added complexity to the CSS and validation logic, but is essential for users with deuteranopia. it was instinctual to just have the boxes be outlined red on error and have no message but when reviewing it was obvious it would be lacking for people with deuteranopia.
 
 ### 7.3 Overall Reflection
 
