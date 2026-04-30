@@ -32,7 +32,7 @@
                 <option value="jobs">Jobs</option>
                 <option value="services">Services</option>
                 <option value="community">Community</option>
-                <option value="craiglist">Craiglist</option>
+                <option value="craigslist">craigslist</option>
               </select>
             </div>
             <div class="form-group subcategory-field"><!-- right-->
@@ -127,7 +127,7 @@
       'community': [
         'activities','events','groups','local news','missed connections','volunteers'
       ],
-      'craiglist': [
+      'craigslist': [
         'about us','blog','safety tips','avoid scams','help & FAQ','contact us'
       ]
     };

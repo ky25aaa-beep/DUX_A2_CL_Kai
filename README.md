@@ -661,21 +661,24 @@ The search bar is prominently placed on the homepage so both experienced users a
 
 ### 3.3 Page / Area 1 — Homepage
 
-![Homepage Wireframe](./wireframes/Home.html)
+![Homepage Wireframe](./wireframe_redesigned_images/wireframe1.png)
 
 > **Description:** The homepage wireframe showing the revised layout with a prominent search bar, category icon grid, featured listings cards, and a "Recently Viewed" section for returning users such as Dexter. The layout uses semantic landmarks and a mobile-first grid to ensure usability across device sizes.
 
-**Design Notes:**
+**Adjustment Notes:**
 
-- Prominent search bar with a clearly labelled graphical "Go" button, addressing Sarah's need (S1) to initiate a search without relying on keyboard shortcuts.
-- Category grid uses icons alongside text labels, reducing reliance on pure text navigation and supporting recognition over recall for all personas.
-- Sufficient spacing between interactive elements accommodates users with hand tremors or motor impairments (S3).
-- "Recently Viewed" section surfaces familiar categories for returning users such as Dexter (D1).
-- Semantic landmarks — `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>` — define page structure clearly for screen readers.
+- Search bar is now 44px high with a clearly labelled "go" button, supporting users who may not rely on keyboard shortcuts (S1), the button is also 44px x 44px.
+- Footer lowest bar, was improperly formatted before, both too small and with too little contrast, this has been fixed to meet the 4.5:1 contrast ratio and the text size is now 16px. (© 2026 craiglist london. all rights reserved.
+privacy· terms· cookies· accessibility· sitemap))
+- Semantic landmarks — `<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>` — define page structure clearly for screen readers, alongisde more atria elements such as `aria-label` and `aria-hidden` where appropriate. 
 
-**Implementation Notes:**
 
-The homepage is implemented using semantic HTML. The navigation uses a `<nav>` element containing a clearly labelled search form:
+
+**Implementation:**
+source code for wireframe is here ![Homepage Wireframe](./wireframes_redesigned/wireframe1.html)
+live page is here ![https://dux-a2.kai-young.co.uk/?page=Home](https://dux-a2.kai-young.co.uk/?page=Home) 
+
+snippets for key components are provided below.
 
 ```html
 <nav>
@@ -704,16 +707,18 @@ Listings are displayed as cards within a CSS Grid layout to support scannability
 
 ### 3.4 Page / Area 2 — Search Results Page
 
-![Search Results Wireframe](./wireframes/wireframe2.html)
+![Search Results Wireframe](./wireframe_redesigned_images/wireframe2.png)
 
 > **Description:** The search results wireframe showing the filter panel on the left, card-based results in the main content area, and sorting controls at the top of the results list. Active filter states are communicated through labels and icons rather than colour alone.
 
-**Design Notes:**
+**Adjustment Notes:**
 
-- Filter panel accessible via keyboard with clearly labelled checkboxes and dropdowns, supporting Dexter's keyboard-only navigation requirement (D2).
-- Results displayed as cards with thumbnail images, title, price, and location to reduce cognitive load for users with dyslexia or ADHD (S2, L2).
-- Sorting and filtering controls use text labels and icons for active/inactive states — not colour alone — ensuring usability for users with colour vision deficiencies (D3).
-- Filters for location and category allow Lana to quickly narrow results without being overwhelmed by irrelevant listings (L1).
+- Search term displayed at the top, instead of just the filters, to provide context for the results and reduce cognitive load for users with dyslexia.
+- Due to design limitations filtering was not implemented and therefore is not displayed.
+
+**Implementation:**
+source code for wireframe is here ![Search Results Wireframe](./wireframes_redesigned/wireframe2.html)
+live page is here ![https://dux-a2.kai-young.co.uk/?page=Search](https://dux-a2.kai-young.co.uk/?page=Search)
 
 ---
 

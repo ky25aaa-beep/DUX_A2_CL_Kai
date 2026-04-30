@@ -32,7 +32,7 @@ if ($fullPath && is_file($fullPath) && strpos($fullPath, $pagesDir) === 0) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>craiglist: <?php echo $title; ?></title>
+  <title>craigslist: <?php echo $title; ?></title>
   <link rel="stylesheet" href="wireframe.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
