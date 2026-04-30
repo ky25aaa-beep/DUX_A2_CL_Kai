@@ -724,105 +724,34 @@ live page is here ![https://dux-a2.kai-young.co.uk/?page=Search](https://dux-a2.
 
 ### 3.5 Page / Area 3 — Post a Listing Form
 
-![Post a Listing Wireframe](./wireframes/wireframe3.html)
+![Post a Listing Wireframe](./wireframes_redesigned_images/wireframe3.png)
 
 > **Description:** The post a listing wireframe showing large, clearly labelled input fields, a dropdown for advert type, a photo upload area with a plus-icon prompt, and publish/save draft actions at the bottom of the form.
 
-**Design Notes:**
+**Adjustment Notes:**
+- Adjusted as the layout was geared towards property sales and not all listings.
+- First and last name were moved adjacent to one another
+- Type of advert was kmoved below alongside a subcategory section to make it more intuitive and easier to fill out. 
 
-- Large input fields with visible labels rather than placeholder-only labels (which disappear on focus), ensuring inputs remain identifiable during entry.
-- Advert type is constrained to a `<select>` dropdown to prevent invalid input (error prevention heuristic).
-- Auto-save behaviour is implemented client-side so users with slower input speeds or hand tremors do not lose progress unexpectedly.
-- The photo upload area uses a visible plus-icon prompt to make the interaction intuitive without requiring instructional text.
-
-**Implementation Notes:**
-
-The form uses `<select>` elements for fields with a defined set of valid options:
-
-```html
-<form class="post-ad-form" action="#">
-  <div class="form-group ad-type-field">
-    <label for="adType">Type of advert</label>
-    <select id="adType" name="adType">
-      <option value="for-sale-owner">For Sale by Owner</option>
-      <option value="for-sale-dealer">For Sale by Dealer</option>
-      <option value="housing-offered">Housing Offered</option>
-      <option value="housing-wanted">Housing Wanted</option>
-      <option value="job-offered">Job Offered</option>
-      <option value="service-offered">Service Offered</option>
-      <option value="community">Community</option>
-      <option value="event-class">Event / Class</option>
-    </select>
-  </div>
-```
-
-Free-text fields use `type="text"` with explicit `<label>` elements:
-
-```html
-  <div class="form-group first-name-field">
-    <label for="firstName">First name</label>
-    <input type="text" id="firstName" name="firstName" placeholder="John">
-  </div>
-```
-
-Form actions are separated into a primary submit and a secondary draft-save:
-
-```html
-  <div class="post-ad-actions">
-    <button type="submit" class="btn btn-primary">publish ad</button>
-    <button type="button" class="btn btn-secondary">save draft</button>
-  </div>
-</form>
-```
-
-The photo upload area presents a clickable icon that reveals a hidden file input:
-
-```html
-<div class="photo-upload-row">
-  <div class="photo-upload-title">Upload photos</div>
-  <div class="profile-picture">
-    <h1 class="upload-icon"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></h1>
-    <input class="file-uploader" type="file" accept="image/*">
-  </div>
-</div>
-```
-
-The results grid and upload area use CSS Grid with `minmax` for fluid responsiveness:
-
-```css
-.ads-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
-  gap: 1rem;
-}
-
-.profile-picture {
-  opacity: 0.75;
-  height: 250px;
-  width: 250px;
-  position: relative;
-  overflow: hidden;
-  background: url('placeholder.jpg') center / cover no-repeat;
-  box-shadow: 0 8px 6px -6px black;
-}
-```
-
+- 
+**Implementation:**
+source code for wireframe is here ![Post a Listing Wireframe](./wireframes_redesigned/wireframe3.html)
+live page is here ![https://dux-a2.kai-young.co.uk/?page=post_ad](https://dux-a2.kai-young.co.uk/?page=post_ad)
 ---
 
 ### 3.6 Page / Area 4 — Avoiding Scams
 
-![Avoiding Scams Wireframe](./wireframe_images/wireframe_4.png)
+![Avoiding Scams Wireframe](./wireframes_redesigned_images/wireframe_4.png)
 
 > **Description:** The Avoiding Scams page wireframe showing a single-page layout with clearly headed sections, icon-accompanied tips, actionable steps for verifying listings, and persistent safety warnings accessible from any point on the page.
 
-**Design Notes:**
+**Adjustment Notes:**
+- No Changes were made to the wireframe as the original design was already well structured and met the necessary accessibility and usability requirements. The single-page layout with clear headings and actionable tips was retained to ensure users can easily find and understand scam prevention advice without needing to navigate away from the page.
 
-- Single-page clarity so all guidance is presented in one continuous, readable flow without requiring users to navigate between sub-pages.
-- Each tip includes an actionable step — what to watch for, how to verify, and what to do if something seems suspicious.
-- Content is organised with clear headings, bullet points, and icons for quick scanning, avoiding walls of unbroken text.
-- All interactive elements are fully keyboard and screen reader accessible with clearly focusable warnings.
-- Navigation remains consistent with the rest of the site so users can leave the page without multiple back-clicks.
-- Mobile-first layout with touch-friendly elements and a responsive structure for all screen sizes.
+**Implementation:**
+source code for wireframe is here ![Avoiding Scams Wireframe](./wireframes_redesigned/wireframe_4.html)
+live page is here ![https://dux-a2.kai-young.co.uk/?page=information/avoiding-scams](https://dux-a2.kai-young.co.uk/?page=information/avoiding-scams)
+
 
 ---
 
@@ -832,64 +761,51 @@ The results grid and upload area use CSS Grid with `minmax` for fluid responsive
 
 > **Description:** The Open Ad wireframe showing the listing card (image, title, price, location, description) at the top of the page, followed by the threaded messaging interface below. Buyer and seller messages are visually differentiated through alignment and border styling in addition to colour.
 
-**Design Notes:**
+**Adjustment Notes:**
+- Messages where moved within the ad box to make it more intuitive and easier to follow the conversation between the buyer and seller, as well as making it more mobile friendly.
+- Removed the type and pickup location as they are not relavent as location is already provided and the type of ad is not important to the buyer.
 
-- Designed primarily for mobile so listing details appear immediately without scrolling past navigation or messaging controls.
-- The listing is presented as a single card with image, title, price, location, and description, enabling quick comprehension at a glance.
-- The ad image scales to fill screen width while maintaining aspect ratio; descriptive `alt` text supports screen reader users.
-- Price and location are visually separated from the description so key information is identifiable without reading the full listing.
-- Buyer and seller messages are differentiated by alignment and border style — not colour alone — ensuring the conversation is followable by users with deuteranopia (D3).
-- The header, navigation bar, and footer remain consistent with all other pages to maintain orientation.
 
-**Implementation Notes:**
+**Implementation:**
+source code for wireframe is here ![Open Ad Wireframe](./wireframes_redesigned/wireframe_5.html)
+live page is here ![https://dux-a2.kai-young.co.uk/?page=open_ad&ad=501](https://dux-a2.kai-young.co.uk/?page=open_ad&ad=501)
 
 The listing card groups all key information semantically:
 
 ```html
-<div class="ad-card">
-  <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4"
-       alt="Upright Piano">
-  <div class="ad-card-body">
-    <div class="ad-card-title">Upright Piano for Sale</div>
-    <div class="ad-card-price">£400</div>
-    <div class="ad-card-location">📍 Camden, London</div>
-    <div class="ad-card-desc">
-      Well-maintained upright piano, perfect for beginners and students.
-    </div>
-  </div>
-</div>
+        <div class="ad-card">
+          <img src="https://picsum.photos/seed/FLYBOYZ/900/600" alt="Community Yoga Class image" style="width:100%; height:100%">
+          <div class="ad-card-body">
+            <div class="ad-card-title">Community Yoga Class</div>
+            <div class="ad-card-price">£1950</div>
+
+            <!-- Clickable location toggles map below -->
+            <div id="ad-location" class="ad-card-location" data-location="Stratford, London" style="cursor:pointer;">Stratford, London {click to view on map}</div>
+
+            <!-- Map iframe is hidden until user requests it -->
+            <div id="map" style="display:none;margin-top:8px;">
+              <iframe id="mapframe" width="100%" height="300" style="border:0" loading="lazy"></iframe>
+            </div>
+
+            <div class="ad-card-title">Description</div>
+            <div class="ad-card-desc">Cupidatat adipisicing dolor anim ullamco excepteur occaecat quis pariatur culpa occaecat elit exercitation aute.</div>
+
+            <p style="font-size:12px;color:#555">
+              <strong>Seller:</strong> james_bowman<br>
+              <strong>Posted:</strong> 2026-03-03T09:32:34 -00:00<br>
+              <strong>Category:</strong> flats to rent / 1-bedroom
+            </p>
+
+            <a class="btn btn-primary" href="/?page=open_ad&id=static-example">View (static)</a>
+          </div>
+        </div>
+
 ```
-
-The messaging thread uses Flexbox with class-based differentiation for buyer messages:
-
-```html
-<div class="messages-thread">
-  <div class="seller-card message-buyer">
-    <h5>Short Rob (Buyer)</h5>
-    <p>Hi Tall Rob, is the upright piano still available?</p>
-  </div>
-  <div class="seller-card message-seller">
-    <h5>Tall Rob (Seller)</h5>
-    <p>Hey Short Rob, yes it is. You're welcome to come see it this weekend.</p>
-  </div>
-</div>
-```
-
-Buyer messages are visually offset using a border and right-aligned text — not colour alone:
-
-```css
-.messages-thread .message-buyer {
-  border-left: 1px solid #d0c8d8;
-  border-right: 4px solid #800080;
-  text-align: right;
-}
-```
-
 ---
 
 ## 4. Development
 
-- **Tech stack:** HTML5, CSS3 (Grid + Flexbox), responsive media queries, light PHP endpoints under `WEB_ROOT/api/` for demo data. Font Awesome icons used for visual indicators (Facebook, Instagram, category icons, etc.).
+- **Tech stack:** HTML5, CSS (Grid + Flexbox), responsive media queries, light PHP endpoints under `WEB_ROOT/api/` for demo data. Font Awesome icons used for visual indicators (Facebook, Instagram, category icons, etc.).
 - **Pages implemented:**
   - `https://dux-a2.kai-young.co.uk/?page=Home` — Homepage with search and category grid.
   - `https://dux-a2.kai-young.co.uk/?page=search` — Search results with filters.

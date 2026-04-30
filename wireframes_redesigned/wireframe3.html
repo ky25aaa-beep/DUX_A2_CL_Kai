@@ -1,0 +1,462 @@
+<html lang="en-GB" data-grabit-extension-base-url="chrome-extension://djcobamaplcmhmaocomnkfdbcoiggepo/" style="transition-property: none; margin-right: 0px;"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>craigslist: Post_ad</title>
+  <link rel="stylesheet" href="wireframe.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<body>
+    <header role="banner" aria-label="Site header">
+    <div class="header-left">
+      <h1>craigslist</h1>
+      <h3>London UK</h3>
+    </div>
+    <div class="header-right">
+        <button onclick="window.location.href='/?page=post_ad'" class="btn btn-primary" aria-label="Post to classifieds">post to classifieds</button>
+        <button class="btn btn-secondary" aria-label="My account">my account</button>
+    </div>
+  </header>
+
+    <!-- NAV -->
+      <nav role="navigation" aria-label="Primary navigation">
+        <form action="search.php" method="GET" role="search" aria-label="Site search">
+            <input type="search" name="q" placeholder="search classifieds..." aria-label="Search classifieds">
+            <button type="submit" class="btn btn-primary" aria-label="Search">
+              Go
+              
+            </button>
+        </form>
+        <a href="/?page=Home">home</a>
+        <a href="/?page=local_ads">local ads</a>
+        <a href="/?page=in_development&amp;undevelopedname=ForSale">for sale</a>
+        <a href="/?page=in_development&amp;undevelopedname=Housing">housing</a>
+        <a href="/?page=in_development&amp;undevelopedname=Jobs">jobs</a>
+        <a href="/?page=in_development&amp;undevelopedname=Services">services</a>
+        <a href="/?page=in_development&amp;undevelopedname=Help">help</a>
+      </nav>
+
+<script>
+    document.querySelector('nav form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const query = this.querySelector('input[name="q"]').value;
+        window.location.href = `?page=search&q=${encodeURIComponent(query)}`;
+    });
+</script>
+
+
+  <!-- MAIN -->
+  <div class="page-wrap">
+
+        <aside role="complementary" aria-label="Sidebar">
+
+          <div class="sidebar-section" role="region" aria-labelledby="evt-cal-label">
+            <h4 id="evt-cal-label">Event Calendar</h4>
+            <ul>
+              <li><a href="/?page=in_development&amp;undevelopedname=Evt_SummerMusicFestival">Summer Music Festival — Jul 12</a></li>
+              <li><a href="/?page=in_development&amp;undevelopedname=Evt_TechMeetup">Tech Meetup — Mar 5</a></li>
+              <li><a href="/?page=in_development&amp;undevelopedname=Evt_BrickLaneArtFair">Brick Lane Art Fair — Mar 9</a></li>
+              <li><a href="/?page=in_development&amp;undevelopedname=Evt_HackneyOpenStudios">Hackney Open Studios — Apr 1</a></li>
+            </ul>
+          </div>
+
+      <div class="sidebar-section" role="region" aria-labelledby="local-news-label">
+        <h4 id="local-news-label">Local News</h4>
+        <ul>
+          <li><a href="/?page=in_development&amp;undevelopedname=News_TubeStrike">Tube strike update: Fri–Sat</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=News_CycleLanes">New cycle lanes: Southwark</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=News_CommunityGarden">Community garden opens in Peckham</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section" role="region" aria-labelledby="help-info-label">
+        <h4 id="help-info-label">Help &amp; Info</h4>
+        <ul>
+          <li><a href="/?page=in_development&amp;undevelopedname=Help_SafetyTips">Safety tips</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=Help_PostingFAQ">Posting FAQ</a></li>
+          <li><a href="/?page=information/avoiding-scams">Avoid scams</a></li>
+          <li><a href="mailto:ky25aaa@herts.ac.uk">Contact us</a></li>
+          <li><a href="/?page=information/terms-of-service">Terms of use</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section" role="region" aria-labelledby="best-of-label">
+        <h4 id="best-of-label">Best of Craigslist</h4>
+        <ul>
+          <li><a href="/?page=in_development&amp;undevelopedname=BestOf_ThisWeek">Best of this week</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=BestOf_TopSellers">Top sellers</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=BestOf_StaffPicks">Staff picks</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section" role="region" aria-labelledby="find-us-label">
+        <h4 id="find-us-label">Find Us</h4>
+        <div class="social-mini" role="navigation" aria-label="Social media links">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="icon-facebook" aria-hidden="true"></i> facebook</a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer"><i class="icon-twitter" aria-hidden="true"></i> X</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="icon-instagram" aria-hidden="true"></i> Instagram</a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><i class="icon-youtube" aria-hidden="true"></i> YouTube</a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- CONTENT -->
+    <main id="main-content" class="content" role="main" aria-label="Main content">
+            <!-- POST AN AD accessible at https://dux-a2.kai-young.co.uk/?page=post_ad -->
+            <div class="content-section">
+              <div class="section-header">
+                <h2>Post An Ad</h2>
+              </div>
+
+              <!--
+                Post Ad form
+                - Semantic, keyboard-friendly fields with visible labels
+                - Client-side validation provides accessible text + icon feedback
+                - Images are read as data URLs and sent in the payload for demo
+              -->
+              <form class="post-ad-form" action="#">
+          <div class="post-ad-grid">
+             <!-- row 1 (concatenate into 1stname_2ndname) -->
+            <div class="form-group first-name-field"><!-- left -->
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="John">
+            </div>
+
+            <div class="form-group last-name-field">
+              <label for="lastName">Surname</label><!-- right-->
+              <input type="text" id="lastName" name="lastName" placeholder="Doe">
+            </div>
+            <!-- row 2 -->
+            <div class="form-group category-field"> <!-- left -->
+              <label for="bigCategory">Category</label>
+              <select id="bigCategory" name="bigCategory">
+                <option value="">Select category</option>
+                <option value="for-sale">For Sale</option>
+                <option value="housing">Housing</option>
+                <option value="jobs">Jobs</option>
+                <option value="services">Services</option>
+                <option value="community">Community</option>
+                <option value="craigslist">craigslist</option>
+              </select>
+            </div>
+            <div class="form-group subcategory-field"><!-- right-->
+                <label for="subCategory">Subcategory</label>
+                <select id="subCategory" name="subCategory" disabled="">
+                  <option value="">Select subcategory</option>
+                </select>
+            </div>
+            <div class="form-group price-field">
+              <label for="price">Price (£)</label>
+              <input type="text" id="price" name="price" placeholder="900">
+            </div>
+
+            <div class="form-group location-field">
+              <label for="location">Location</label>
+              <input type="text" id="location" name="location" placeholder="eg. Camden, London">
+            </div>
+
+            <div class="form-group form-span-2"><!-- title spans two columns -->
+              <label for="adTitle">Title</label>
+              <input type="text" id="adTitle" name="adTitle" placeholder="e.g. Bike for sale">
+            </div>
+
+            <div class="form-group form-span-2">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" placeholder="Add key details about your ad..."></textarea>
+            </div>
+          </div>
+
+          <!-- Photo upload: visible affordance + hidden file input (multiple) -->
+          <div class="photo-upload-row">
+            <div class="photo-upload-title">Upload photos</div>
+            <div class="profile-picture">
+              <h1 class="upload-icon"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></h1>
+              <input class="file-uploader" id="images" name="images[]" type="file" accept="image/*" multiple="">
+            </div>
+          </div>
+
+          <!-- Form actions: primary publish, secondary save draft -->
+          <div class="post-ad-actions">
+            <button type="submit" class="btn btn-primary">publish ad</button>
+            <button type="button" class="btn btn-secondary">save draft</button>
+          </div>
+        </form>
+      </div>
+<script>
+  // Enhance form behaviour: dynamic subcategories, file reading, and accessible validation
+  document.addEventListener('DOMContentLoaded', function() {
+    // DOM refs
+    const propertyType = document.getElementById('propertyType'); // optional field for housing
+    const bigCategory = document.getElementById('bigCategory');
+    const subCategory = document.getElementById('subCategory');
+    const form = document.querySelector('.post-ad-form');
+    const fileInput = document.getElementById('images');
+
+    // Enable/disable property type when 'housing' category is selected
+    function syncPropertyFieldState() {
+      const isHousing = bigCategory && bigCategory.value === 'housing';
+      if (propertyType) propertyType.disabled = !isHousing;
+      if (!isHousing && propertyType) propertyType.value = '';
+    }
+
+    if (bigCategory) {
+      bigCategory.addEventListener('change', syncPropertyFieldState);
+      syncPropertyFieldState();
+    }
+
+    // Read a File object as data URL (used for demo upload payload)
+    async function fileToDataUrl(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    // Category -> subcategory mapping (used to populate the subcategory <select>)
+    const categoryMap = {
+      'for-sale': [
+        'antiques','appliances','bikes','books','cars & vans','clothes','electronics','furniture','free stuff'
+      ],
+      'housing': [
+        'flats to rent','rooms wanted','houses for sale','short-term lets','flatshares','commercial','parking'
+      ],
+      'jobs': [
+        'accounting','admin / office','creative / design','education','hospitality','part time','tech / IT'
+      ],
+      'services': [
+        'beauty','childcare','cleaning','financial','lessons & tutoring','moving','pet care'
+      ],
+      'community': [
+        'activities','events','groups','local news','missed connections','volunteers'
+      ],
+      'craigslist': [
+        'about us','blog','safety tips','avoid scams','help & FAQ','contact us'
+      ]
+    };
+
+    // Populate the subcategory select based on the selected big category
+    function populateSubcategories(key) {
+      if (!subCategory) return;
+      subCategory.innerHTML = '';
+      const defaultOpt = document.createElement('option');
+      defaultOpt.value = '';
+      defaultOpt.textContent = 'Select subcategory';
+      subCategory.appendChild(defaultOpt);
+      if (!key || !categoryMap[key]) {
+        subCategory.disabled = true;
+        return;
+      }
+      categoryMap[key].forEach(item => {
+        const opt = document.createElement('option');
+        opt.value = item;
+        opt.textContent = item;
+        subCategory.appendChild(opt);
+      });
+      subCategory.disabled = false;
+    }
+
+    if (bigCategory) {
+      bigCategory.addEventListener('change', () => populateSubcategories(bigCategory.value));
+      if (bigCategory.value) populateSubcategories(bigCategory.value);
+    }
+
+    // Accessible inline validation helpers
+    function clearErrors() {
+      form.querySelectorAll('.error-message').forEach(function(n){ n.remove(); });
+      form.querySelectorAll('[aria-invalid="true"]').forEach(function(f){
+        f.removeAttribute('aria-invalid');
+        f.classList.remove('field-error');
+        f.removeAttribute('aria-describedby');
+      });
+    }
+
+    // Show an error: add visible icon/text and ARIA attributes so screen readers announce it
+    function showFieldError(inputEl, message) {
+      if (!inputEl) return;
+      inputEl.classList.add('field-error');
+      inputEl.setAttribute('aria-invalid', 'true');
+      var id = inputEl.id + '-error';
+      inputEl.setAttribute('aria-describedby', id);
+      var err = document.createElement('div');
+      err.className = 'error-message';
+      err.id = id;
+      err.setAttribute('role', 'alert');
+      err.innerHTML = '<span class="error-icon" aria-hidden="true">⚠</span> <span class="error-text">' + message + '</span>';
+      inputEl.parentNode.appendChild(err);
+    }
+
+    // Form submit: validate, collect images, and POST JSON to demo API
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      clearErrors();
+      const ad_title = (document.getElementById('adTitle') && document.getElementById('adTitle').value || '').trim();
+      const ad_description = (document.getElementById('description') && document.getElementById('description').value || '').trim();
+      const ad_price = (document.getElementById('price') && document.getElementById('price').value.trim()) || '0';
+      const location = (document.getElementById('location') && document.getElementById('location').value || '').trim();
+
+      var valid = true;
+      if (!ad_title) { showFieldError(document.getElementById('adTitle'), 'Title is required'); valid = false; }
+      if (!ad_description) { showFieldError(document.getElementById('description'), 'Description is required'); valid = false; }
+      if (!location) { showFieldError(document.getElementById('location'), 'Location is required'); valid = false; }
+
+      if (!valid) {
+        var firstErr = form.querySelector('.field-error');
+        if (firstErr) firstErr.focus();
+        return;
+      }
+
+      // Read selected files as data URLs (keeps demo simple; server may accept FormData in real apps)
+      const images = [];
+      if (fileInput && fileInput.files && fileInput.files.length) {
+        for (let i = 0; i < fileInput.files.length; i++) {
+          try {
+            const dataUrl = await fileToDataUrl(fileInput.files[i]);
+            images.push(dataUrl);
+          } catch (err) {
+            console.error('Failed to read file', err);
+          }
+        }
+      }
+
+      const firstName = (document.getElementById('firstName') && document.getElementById('firstName').value || '').trim();
+      const lastName = (document.getElementById('lastName') && document.getElementById('lastName').value || '').trim();
+      const creation_user = (firstName || lastName) ? (firstName + '_' + lastName).toLowerCase() : '';
+
+      const payload = {
+        ad_title,
+        ad_description,
+        ad_price,
+        location,
+        images,
+        creation_user,
+        ad_category: subCategory && subCategory.value ? subCategory.value : (bigCategory ? bigCategory.value : ''),
+        ad_subcategory: ''
+      };
+
+      try {
+        const resp = await fetch('/api/create_ad.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const result = await resp.json();
+        if (resp.ok && result.success) {
+          alert('Ad created: ' + result.ad_id);
+          window.location.href = '/';
+        } else {
+          alert('Failed to create ad: ' + (result.error || 'unknown error'));
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Network error when creating ad');
+      }
+    });
+  });
+</script>
+
+    </main>
+
+  </div>
+
+  
+            <footer role="contentinfo" aria-label="Footer">
+                          <div class="footer-inner">
+                <div class="footer-brand-row">
+                  <span class="site-name">craiglist</span>
+                  <span class="tagline">london uk · community-powered classifieds since 1995</span>
+                </div>
+
+                <div class="footer-links-row">
+                  <div class="footer-col">
+                    <h4>for sale</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_antiques">antiques</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_appliances">appliances</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_bikes">bikes</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_books">books</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_cars_vans">cars &amp; vans</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_clothes">clothes</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_electronics">electronics</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_furniture">furniture</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_free_stuff">free stuff</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>housing</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_flats_to_rent">flats to rent</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_rooms_wanted">rooms wanted</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_houses_for_sale">houses for sale</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_short_term_lets">short-term lets</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_flatshares">flatshares</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_commercial">commercial</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_parking">parking</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>jobs</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_accounting">accounting</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_admin_office">admin / office</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_creative_design">creative / design</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_education">education</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_hospitality">hospitality</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_part_time">part time</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_tech_it">tech / IT</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>services</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_beauty">beauty</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_childcare">childcare</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_cleaning">cleaning</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_financial">financial</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_lessons_tutoring">lessons &amp; tutoring</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_moving">moving</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_pet_care">pet care</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>community</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_activities">activities</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_events">events</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_groups">groups</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_local_news">local news</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_missed_connections">missed connections</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_volunteers">volunteers</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>craigslist</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_AboutUs">about us</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_Blog">blog</a></li>
+                      <li><a href="#/?page=information/avoiding-scams">safety tips</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_AvoidingScams">avoid scams</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_Help">help &amp; FAQ</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_Contact">contact us</a></li>
+                    </ul>
+                    <div class="footer-social" role="navigation" aria-label="Footer social links">
+                      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="icon-facebook" aria-hidden="true"></i></a>
+                      <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="icon-twitter" aria-hidden="true"></i></a>
+                      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-bottom">
+                  <span>© 2026 craigslist london. all rights reserved.</span>
+                  <span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Privacy">privacy</a><span class="sep">·</span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Terms">terms</a><span class="sep">·</span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Cookies">cookies</a><span class="sep">·</span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Accessibility">accessibility</a><span class="sep">·</span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Sitemap">sitemap</a>
+                  </span>
+                </div>
+              </div>
+            </footer>
+</body></html>
