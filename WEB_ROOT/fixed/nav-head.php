@@ -4,8 +4,8 @@
       <h3>London UK</h3>
     </div>
     <div class="header-right">
-        <button onclick="window.location.href='/?page=post_ad'" class="btn btn-primary" aria-label="Post to classifieds">post to classifieds</button>
-        <button class="btn btn-secondary" aria-label="My account">my account</button>
+        <button onclick="window.location.href='/?page=post_ad'" class="btn btn-primary" aria-label="Post to classifieds">Create Classified</button>
+        <button onclick="window.location.href='/?page=in_development&undevelopedname=Accounts'" class="btn btn-secondary" aria-label="My account">my account</button>
     </div>
   </header>
 

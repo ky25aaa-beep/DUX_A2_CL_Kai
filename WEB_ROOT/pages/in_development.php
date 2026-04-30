@@ -22,7 +22,14 @@
                 $title = pretty_label($undeveloped);
                 $heading = "$title";
                 $notice = "This content page (events/news/help) is not implemented. It would show event details or local news items and links to related listings.";
-            } else {
+            } elseif (stripos($undeveloped, 'Accounts') === 0) {
+                $title = pretty_label($undeveloped);
+                $heading = "Account: $title";
+                $notice = "Accounts are not implemented in this prototype, but would include transaction/classifieds history, saved searches, and personal details management.";
+            }
+            
+            
+            else {
                 // assume category or filtering page
                 $title = pretty_label($undeveloped);
                 $heading = "Category: $title";

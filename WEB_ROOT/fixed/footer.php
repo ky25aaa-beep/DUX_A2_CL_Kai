@@ -2,7 +2,7 @@
             <footer role="contentinfo" aria-label="Footer">
                           <div class="footer-inner">
                 <div class="footer-brand-row">
-                  <span class="site-name">craiglist</span>
+                  <span class="site-name">craigslist</span>
                   <span class="tagline">london uk · community-powered classifieds since 1995</span>
                 </div>
 
