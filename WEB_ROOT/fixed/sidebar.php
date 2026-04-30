@@ -31,7 +31,7 @@
       </div>
 
       <div class="sidebar-section" role="region" aria-labelledby="best-of-label">
-        <h4 id="best-of-label">Best of Craiglist</h4>
+        <h4 id="best-of-label">Best of Craigslist</h4>
         <ul>
           <li><a href="/?page=in_development&undevelopedname=BestOf_ThisWeek">Best of this week</a></li>
           <li><a href="/?page=in_development&undevelopedname=BestOf_TopSellers">Top sellers</a></li>

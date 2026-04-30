@@ -69,7 +69,7 @@
                     </ul>
                   </div>
                   <div class="footer-col">
-                    <h4>craiglist</h4>
+                    <h4>craigslist</h4>
                     <ul>
                       <li><a href="/?page=in_development&undevelopedname=Info_AboutUs">about us</a></li>
                       <li><a href="/?page=in_development&undevelopedname=Info_Blog">blog</a></li>
@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="footer-bottom">
-                  <span>© 2026 craiglist london. all rights reserved.</span>
+                  <span>© 2026 craigslist london. all rights reserved.</span>
                   <span>
                     <a href="/?page=in_development&undevelopedname=Info_Privacy">privacy</a><span class="sep">·</span>
                     <a href="/?page=in_development&undevelopedname=Info_Terms">terms</a><span class="sep">·</span>

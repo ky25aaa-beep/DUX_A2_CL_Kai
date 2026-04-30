@@ -1,6 +1,6 @@
   <header role="banner" aria-label="Site header">
     <div class="header-left">
-      <h1>craiglist</h1>
+      <h1>craigslist</h1>
       <h3>London UK</h3>
     </div>
     <div class="header-right">
