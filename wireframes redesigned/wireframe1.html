@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>craiglist — Home (wireframe)</title>
+  <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+
+<header role="banner" aria-label="Site header">
+  <div class="header-left">
+    <h1>craiglist</h1>
+    <h3>London UK</h3>
+  </div>
+  <div class="header-right">
+    <button onclick="window.location.href='/?page=post_ad'" class="btn btn-primary">post to classifieds</button>
+    <button class="btn btn-secondary">my account</button>
+  </div>
+</header>
+
+<nav role="navigation" aria-label="Primary navigation">
+  <form action="/" method="GET" role="search">
+    <input type="search" name="q" placeholder="search classifieds...">
+    <button type="submit" class="btn btn-primary">Go</button>
+  </form>
+  <a href="/?page=Home">home</a>
+  <a href="/?page=local_ads">local ads</a>
+  <a href="/?page=in_development&undevelopedname=ForSale">for sale</a>
+  <a href="/?page=in_development&undevelopedname=Housing">housing</a>
+  <a href="/?page=in_development&undevelopedname=Jobs">jobs</a>
+  <a href="/?page=in_development&undevelopedname=Services">services</a>
+  <a href="/?page=in_development&undevelopedname=Help">help</a>
+</nav>
+
+<div class="page-wrap">
+
+  <aside role="complementary" aria-label="Sidebar">
+
+    <div class="sidebar-section">
+      <h4>Event Calendar</h4>
+      <ul>
+        <li>Summer Music Festival — Jul 12</li>
+        <li>Tech Meetup — Mar 5</li>
+        <li>Brick Lane Art Fair — Mar 9</li>
+        <li>Hackney Open Studios — Apr 1</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h4>Local News</h4>
+      <ul>
+        <li>Tube strike update: Fri–Sat</li>
+        <li>New cycle lanes: Southwark</li>
+        <li>Community garden opens in Peckham</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h4>Help & Info</h4>
+      <ul>
+        <li>Safety tips</li>
+        <li>Posting FAQ</li>
+        <li>Avoid scams</li>
+        <li>Contact us</li>
+        <li>Terms of use</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h4>Best of Craiglist</h4>
+      <ul>
+        <li>Best of this week</li>
+        <li>Top sellers</li>
+        <li>Staff picks</li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <main id="main-content" class="content">
+
+    <div class="content-section">
+      <div class="section-header"><h2>Featured Posts</h2></div>
+      <div class="ads-grid"></div>
+    </div>
+
+    <div class="content-section">
+      <div class="section-header"><h2>Featured Sellers</h2></div>
+
+      <div class="sellers-grid">
+        <div class="seller-card">
+          <h5>Alice's Antiques</h5>
+          <p>⭐⭐⭐⭐⭐ — Victorian furniture & glassware.</p>
+        </div>
+        <div class="seller-card">
+          <h5>Bob's Bikes</h5>
+          <p>⭐⭐⭐⭐⭐ — Refurbished cycles & parts.</p>
+        </div>
+        <div class="seller-card">
+          <h5>Zara's Vintage</h5>
+          <p>⭐⭐⭐⭐½ — Vintage fashion.</p>
+        </div>
+        <div class="seller-card">
+          <h5>TechFlip London</h5>
+          <p>⭐⭐⭐⭐⭐ — Refurbished electronics.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="content-section">
+      <div class="section-header">
+        <h2 onclick="window.location.href='/?page=local_ads'">Local Ads</h2>
+      </div>
+      <div class="ads-grid"></div>
+    </div>
+
+  </main>
+</div>
+
+
+  <footer role="contentinfo" aria-label="Footer">
+    <div class="footer-inner">
+      <div class="footer-brand-row">
+        <span class="site-name">craiglist</span>
+        <span class="tagline">london uk · community-powered classifieds since 1995</span>
+      </div>
+
+      <div class="footer-links-row">
+        <div class="footer-col">
+          <h4>for sale</h4>
+          <ul>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_antiques">antiques</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_appliances">appliances</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_bikes">bikes</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_books">books</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_cars_vans">cars &amp; vans</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_clothes">clothes</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_electronics">electronics</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_furniture">furniture</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_free_stuff">free stuff</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>housing</h4>
+          <ul>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_flats_to_rent">flats to rent</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_rooms_wanted">rooms wanted</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_houses_for_sale">houses for sale</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_short_term_lets">short-term lets</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_flatshares">flatshares</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_commercial">commercial</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_parking">parking</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>jobs</h4>
+          <ul>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_accounting">accounting</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_admin_office">admin / office</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_creative_design">creative / design</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_education">education</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_hospitality">hospitality</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_part_time">part time</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_tech_it">tech / IT</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>services</h4>
+          <ul>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_beauty">beauty</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_childcare">childcare</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_cleaning">cleaning</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_financial">financial</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_lessons_tutoring">lessons &amp; tutoring</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_moving">moving</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_pet_care">pet care</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>community</h4>
+          <ul>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_activities">activities</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_events">events</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_groups">groups</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_local_news">local news</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_missed_connections">missed connections</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Category_volunteers">volunteers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>craiglist</h4>
+          <ul>
+            <li><a href="/?page=in_development&amp;undevelopedname=Info_AboutUs">about us</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Info_Blog">blog</a></li>
+            <li><a href="#/?page=information/avoiding-scams">safety tips</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Info_AvoidingScams">avoid scams</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Info_Help">help &amp; FAQ</a></li>
+            <li><a href="/?page=in_development&amp;undevelopedname=Info_Contact">contact us</a></li>
+          </ul>
+          <div class="footer-social" role="navigation" aria-label="Footer social links">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="icon-facebook" aria-hidden="true"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="icon-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 craiglist london. all rights reserved.</span>
+        <span>
+          <a href="/?page=in_development&amp;undevelopedname=Info_Privacy">privacy</a><span class="sep">·</span>
+          <a href="/?page=in_development&amp;undevelopedname=Info_Terms">terms</a><span class="sep">·</span>
+          <a href="/?page=in_development&amp;undevelopedname=Info_Cookies">cookies</a><span class="sep">·</span>
+          <a href="/?page=in_development&amp;undevelopedname=Info_Accessibility">accessibility</a><span class="sep">·</span>
+          <a href="/?page=in_development&amp;undevelopedname=Info_Sitemap">sitemap</a>
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+<script>
+const demoAds = [
+{
+id:"ad1",
+location:"Canary Wharf, London",
+ad_title:"Used Washing Machine",
+ad_price:895,
+ad_description:"Great condition.",
+images:["https://picsum.photos/seed/1/450/300"]
+},
+{
+id:"ad2",
+location:"Stratford, London",
+ad_title:"Room in Shared Flat",
+ad_price:1279,
+ad_description:"Close to transport.",
+images:["https://picsum.photos/seed/2/450/300"]
+},
+{
+id:"ad3",
+location:"Shoreditch, London",
+ad_title:"Maths Tutor Available",
+ad_price:1071,
+ad_description:"Experienced tutor.",
+images:["https://picsum.photos/seed/3/450/300"]
+},
+{
+id:"ad4",
+location:"Peckham, London",
+ad_title:"1-Bedroom Flat for Rent",
+ad_price:1373,
+ad_description:"Recently renovated.",
+images:["https://picsum.photos/seed/4/450/300"]
+}
+];
+
+function formatPrice(p){
+return "£"+p.toLocaleString();
+}
+
+function createAdCard(ad){
+const el=document.createElement("div");
+el.className="ad-card";
+el.innerHTML=`
+<img src="${ad.images[0]}" alt="${ad.ad_title}">
+<div class="ad-card-body">
+<div class="ad-card-title">${ad.ad_title}</div>
+<div class="ad-card-price">${formatPrice(ad.ad_price)}</div>
+<div class="ad-card-location">📍 ${ad.location}</div>
+<div class="ad-card-desc">${ad.ad_description}</div>
+<a class="btn btn-primary" href="#">open ad</a>
+</div>`;
+return el;
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+const grids=document.querySelectorAll(".ads-grid");
+if(grids[0]) demoAds.forEach(ad=>grids[0].appendChild(createAdCard(ad)));
+if(grids[1]) demoAds.slice(1).forEach(ad=>grids[1].appendChild(createAdCard(ad)));
+});
+</script>
+
+</body>
+</html>

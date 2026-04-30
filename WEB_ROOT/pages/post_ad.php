@@ -1,12 +1,18 @@
-      <!-- POST AN AD -->
-      <div class="content-section">
-        <div class="section-header">
-          <h2>Post An Ad</h2>
-        </div>
+      <!-- POST AN AD accessible at https://dux-a2.kai-young.co.uk/?page=post_ad -->
+            <div class="content-section">
+              <div class="section-header">
+                <h2>Post An Ad</h2>
+              </div>
 
-        <form class="post-ad-form" action="#">
+              <!--
+                Post Ad form
+                - Semantic, keyboard-friendly fields with visible labels
+                - Client-side validation provides accessible text + icon feedback
+                - Images are read as data URLs and sent in the payload for demo
+              -->
+              <form class="post-ad-form" action="#">
           <div class="post-ad-grid">
-             <!-- row 1 (concat into 1stname_2ndname -->
+             <!-- row 1 (concatenate into 1stname_2ndname) -->
             <div class="form-group first-name-field"><!-- left -->
               <label for="firstName">First name</label>
               <input type="text" id="firstName" name="firstName" placeholder="John">
@@ -29,15 +35,11 @@
                 <option value="craiglist">Craiglist</option>
               </select>
             </div>
-            <div class="form-group subcategory-field">
+            <div class="form-group subcategory-field"><!-- right-->
                 <label for="subCategory">Subcategory</label>
                 <select id="subCategory" name="subCategory" disabled>
                   <option value="">Select subcategory</option>
                 </select>
-            </div>
-            <div class="form-group form-span-2">
-              <label for="adTitle">Title</label>
-              <input type="text" id="adTitle" name="adTitle" placeholder="e.g. Bike for sale">
             </div>
             <div class="form-group price-field">
               <label for="price">Price (£)</label>
@@ -49,12 +51,18 @@
               <input type="text" id="location" name="location" placeholder="eg. Camden, London">
             </div>
 
+            <div class="form-group form-span-2"><!-- title spans two columns -->
+              <label for="adTitle">Title</label>
+              <input type="text" id="adTitle" name="adTitle" placeholder="e.g. Bike for sale">
+            </div>
+
             <div class="form-group form-span-2">
               <label for="description">Description</label>
               <textarea id="description" name="description" placeholder="Add key details about your ad..."></textarea>
             </div>
           </div>
 
+          <!-- Photo upload: visible affordance + hidden file input (multiple) -->
           <div class="photo-upload-row">
             <div class="photo-upload-title">Upload photos</div>
             <div class="profile-picture">
@@ -63,27 +71,28 @@
             </div>
           </div>
 
+          <!-- Form actions: primary publish, secondary save draft -->
           <div class="post-ad-actions">
             <button type="submit" class="btn btn-primary">publish ad</button>
             <button type="button" class="btn btn-secondary">save draft</button>
           </div>
         </form>
       </div>
-
 <script>
+  // Enhance form behaviour: dynamic subcategories, file reading, and accessible validation
   document.addEventListener('DOMContentLoaded', function() {
-    const propertyType = document.getElementById('propertyType');
+    // DOM refs
+    const propertyType = document.getElementById('propertyType'); // optional field for housing
     const bigCategory = document.getElementById('bigCategory');
     const subCategory = document.getElementById('subCategory');
     const form = document.querySelector('.post-ad-form');
     const fileInput = document.getElementById('images');
 
+    // Enable/disable property type when 'housing' category is selected
     function syncPropertyFieldState() {
       const isHousing = bigCategory && bigCategory.value === 'housing';
       if (propertyType) propertyType.disabled = !isHousing;
-      if (!isHousing && propertyType) {
-        propertyType.value = '';
-      }
+      if (!isHousing && propertyType) propertyType.value = '';
     }
 
     if (bigCategory) {
@@ -91,6 +100,7 @@
       syncPropertyFieldState();
     }
 
+    // Read a File object as data URL (used for demo upload payload)
     async function fileToDataUrl(file) {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -100,6 +110,7 @@
       });
     }
 
+    // Category -> subcategory mapping (used to populate the subcategory <select>)
     const categoryMap = {
       'for-sale': [
         'antiques','appliances','bikes','books','cars & vans','clothes','electronics','furniture','free stuff'
@@ -121,6 +132,7 @@
       ]
     };
 
+    // Populate the subcategory select based on the selected big category
     function populateSubcategories(key) {
       if (!subCategory) return;
       subCategory.innerHTML = '';
@@ -143,16 +155,20 @@
 
     if (bigCategory) {
       bigCategory.addEventListener('change', () => populateSubcategories(bigCategory.value));
-      // optionally populate if a value already selected
       if (bigCategory.value) populateSubcategories(bigCategory.value);
     }
 
     // Accessible inline validation helpers
     function clearErrors() {
       form.querySelectorAll('.error-message').forEach(function(n){ n.remove(); });
-      form.querySelectorAll('[aria-invalid="true"]').forEach(function(f){ f.removeAttribute('aria-invalid'); f.classList.remove('field-error'); f.removeAttribute('aria-describedby'); });
+      form.querySelectorAll('[aria-invalid="true"]').forEach(function(f){
+        f.removeAttribute('aria-invalid');
+        f.classList.remove('field-error');
+        f.removeAttribute('aria-describedby');
+      });
     }
 
+    // Show an error: add visible icon/text and ARIA attributes so screen readers announce it
     function showFieldError(inputEl, message) {
       if (!inputEl) return;
       inputEl.classList.add('field-error');
@@ -167,6 +183,7 @@
       inputEl.parentNode.appendChild(err);
     }
 
+    // Form submit: validate, collect images, and POST JSON to demo API
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       clearErrors();
@@ -186,6 +203,7 @@
         return;
       }
 
+      // Read selected files as data URLs (keeps demo simple; server may accept FormData in real apps)
       const images = [];
       if (fileInput && fileInput.files && fileInput.files.length) {
         for (let i = 0; i < fileInput.files.length; i++) {
@@ -198,8 +216,8 @@
         }
       }
 
-      const firstName = document.getElementById('firstName').value.trim();
-      const lastName = document.getElementById('lastName').value.trim();
+      const firstName = (document.getElementById('firstName') && document.getElementById('firstName').value || '').trim();
+      const lastName = (document.getElementById('lastName') && document.getElementById('lastName').value || '').trim();
       const creation_user = (firstName || lastName) ? (firstName + '_' + lastName).toLowerCase() : '';
 
       const payload = {

@@ -1089,7 +1089,15 @@ The deployed site represents a meaningful improvement over the original Craigsli
 
 ---
 
-## 8. Contributor — A2 Portion
+## 8. Assignment Requirements Evidenced
+- **A1 Deliverables:** Wireframes, user personas, competitor analysis, accessibility analysis, and design rationale are all documented in the `wireframes/` directory and the A1 section of this README.
+- **A2 Deliverables:** 
+ - **A2 Deliverables:**
+  - Revise wireframes: updated wireframe HTML files are in the `wireframes/` directory with annotations.
+  - Build a responsive, accessible website (HTML5/CSS) with at least three pages or sections and one working form. Use media queries/Grid/Bootstrap for layout, include keyboard-accessible controls and alt text, provide user controls for pop-ups/media, add at least one interactive feature (e.g., map or API), write clean commented code, organise files into clear directories with lowercase names, include a main navigation menu, and ensure external links open in a new tab with no broken links.
+
+
+## 9. Contributor — A2 Portion
 
 | Name      | Email               | A2 Contribution                                                      |
 |-----------|---------------------|----------------------------------------------------------------------|
@@ -1097,7 +1105,7 @@ The deployed site represents a meaningful improvement over the original Craigsli
 
 ---
 
-## 9. Attribution
+## 10. Attribution
 
 - **Font Awesome** — icons used for category navigation and UI indicators; attributed in HTML comments at each point of use.
 - **Unsplash** — placeholder listing images used under the Unsplash licence; image URLs and attribution included in source comments.
@@ -1106,7 +1114,7 @@ The deployed site represents a meaningful improvement over the original Craigsli
 
 ---
 
-## 10. Deployment & Run
+## 11. Deployment & Run
 
 **Local preview (PHP built-in server):**
 
@@ -1119,7 +1127,7 @@ php -S localhost:8080 -t WEB_ROOT
 
 ---
 
-## 11. References
+## 12. References
 
 Nayak, N. (2019) *A UI/UX Critique of Craigslist*. Medium. Available at: https://medium.com/@nihalnayak/a-ui-ux-critique-of-craigslist-e3b235824479 (Accessed: 24 March 2026).
 

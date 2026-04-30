@@ -1,13 +1,9 @@
 <?php
-$page = $_GET['page'] ?? 'Home';
-$title = ucwords(str_replace('-', ' ', $page));
+$searchQuery = $_GET['q'] ?? ''; # $ searchQuery is set to the 'q' parameter from the URL, or an empty string if 'q' is not provided
 ?>
-<?php
-$searchQuery = $_GET['q'] ?? '';
-?>
-<div class="content-section">
+<div class="content-section"> <!
   <div class="section-header">
-    <h2>Search Results for "<?php echo htmlspecialchars($searchQuery); ?>"</h2>
+    <h2>Search Results for "<?php echo htmlspecialchars($searchQuery); ?>"</h2> <!-- The search query is displayed in the heading, with HTML special characters escaped for security -->
   </div>
   <div class="ads-grid" id="search-results">
     <!-- Search results will be injected here by JavaScript -->
