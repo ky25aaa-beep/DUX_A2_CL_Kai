@@ -1,0 +1,804 @@
+<html lang="en-GB" data-grabit-extension-base-url="chrome-extension://djcobamaplcmhmaocomnkfdbcoiggepo/" style="transition-property: none; margin-right: 0px;"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>craiglist: Search</title>
+  <link rel="stylesheet" href="wireframe.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
+<body>
+    <header role="banner" aria-label="Site header">
+    <div class="header-left">
+      <h1>craiglist</h1>
+      <h3>London UK</h3>
+    </div>
+    <div class="header-right">
+        <button onclick="window.location.href='/?page=post_ad'" class="btn btn-primary" aria-label="Post to classifieds">post to classifieds</button>
+        <button class="btn btn-secondary" aria-label="My account">my account</button>
+    </div>
+  </header>
+
+    <!-- NAV -->
+      <nav role="navigation" aria-label="Primary navigation">
+        <form action="search.php" method="GET" role="search" aria-label="Site search">
+            <input type="search" name="q" placeholder="search classifieds..." aria-label="Search classifieds">
+            <button type="submit" class="btn btn-primary" aria-label="Search">
+              Go
+              
+            </button>
+        </form>
+        <a href="/?page=Home">home</a>
+        <a href="/?page=local_ads">local ads</a>
+        <a href="/?page=in_development&amp;undevelopedname=ForSale">for sale</a>
+        <a href="/?page=in_development&amp;undevelopedname=Housing">housing</a>
+        <a href="/?page=in_development&amp;undevelopedname=Jobs">jobs</a>
+        <a href="/?page=in_development&amp;undevelopedname=Services">services</a>
+        <a href="/?page=in_development&amp;undevelopedname=Help">help</a>
+      </nav>
+
+<script>
+    document.querySelector('nav form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const query = this.querySelector('input[name="q"]').value;
+        window.location.href = `?page=search&q=${encodeURIComponent(query)}`;
+    });
+</script>
+
+
+  <!-- MAIN -->
+  <div class="page-wrap">
+
+        <aside role="complementary" aria-label="Sidebar">
+
+          <div class="sidebar-section" role="region" aria-labelledby="evt-cal-label">
+            <h4 id="evt-cal-label">Event Calendar</h4>
+            <ul>
+              <li><a href="/?page=in_development&amp;undevelopedname=Evt_SummerMusicFestival">Summer Music Festival — Jul 12</a></li>
+              <li><a href="/?page=in_development&amp;undevelopedname=Evt_TechMeetup">Tech Meetup — Mar 5</a></li>
+              <li><a href="/?page=in_development&amp;undevelopedname=Evt_BrickLaneArtFair">Brick Lane Art Fair — Mar 9</a></li>
+              <li><a href="/?page=in_development&amp;undevelopedname=Evt_HackneyOpenStudios">Hackney Open Studios — Apr 1</a></li>
+            </ul>
+          </div>
+
+      <div class="sidebar-section" role="region" aria-labelledby="local-news-label">
+        <h4 id="local-news-label">Local News</h4>
+        <ul>
+          <li><a href="/?page=in_development&amp;undevelopedname=News_TubeStrike">Tube strike update: Fri–Sat</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=News_CycleLanes">New cycle lanes: Southwark</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=News_CommunityGarden">Community garden opens in Peckham</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section" role="region" aria-labelledby="help-info-label">
+        <h4 id="help-info-label">Help &amp; Info</h4>
+        <ul>
+          <li><a href="/?page=in_development&amp;undevelopedname=Help_SafetyTips">Safety tips</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=Help_PostingFAQ">Posting FAQ</a></li>
+          <li><a href="/?page=information/avoiding-scams">Avoid scams</a></li>
+          <li><a href="mailto:ky25aaa@herts.ac.uk">Contact us</a></li>
+          <li><a href="/?page=information/terms-of-service">Terms of use</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section" role="region" aria-labelledby="best-of-label">
+        <h4 id="best-of-label">Best of Craiglist</h4>
+        <ul>
+          <li><a href="/?page=in_development&amp;undevelopedname=BestOf_ThisWeek">Best of this week</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=BestOf_TopSellers">Top sellers</a></li>
+          <li><a href="/?page=in_development&amp;undevelopedname=BestOf_StaffPicks">Staff picks</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section" role="region" aria-labelledby="find-us-label">
+        <h4 id="find-us-label">Find Us</h4>
+        <div class="social-mini" role="navigation" aria-label="Social media links">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="icon-facebook" aria-hidden="true"></i> facebook</a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer"><i class="icon-twitter" aria-hidden="true"></i> X</a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="icon-instagram" aria-hidden="true"></i> Instagram</a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"><i class="icon-youtube" aria-hidden="true"></i> YouTube</a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- CONTENT -->
+    <main id="main-content" class="content" role="main" aria-label="Main content">
+      <div class="content-section"> <!--
+  <div class="section-header"-->
+    <h2>Search Results for "washing machine"</h2> <!-- The search query is displayed in the heading, with HTML special characters escaped for security -->
+  </div>
+  <div class="ads-grid" id="search-results">
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/ANIVET/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£985</div>
+                  <div class="ad-card-location">📍 Clapham, London</div>
+                  <div class="ad-card-desc">Amet irure do ea nisi sunt aliquip ex aliqua est nulla sint tempor officia eiusmod.</div>
+                  <a href="/?page=open_ad&amp;id=ad113" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/VENOFLEX/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1414</div>
+                  <div class="ad-card-location">📍 Chelsea, London</div>
+                  <div class="ad-card-desc">Eu incididunt cillum cillum adipisicing esse amet.</div>
+                  <a href="/?page=open_ad&amp;id=ad150" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/OVATION/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£538</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Et sit reprehenderit proident officia deserunt adipisicing.</div>
+                  <a href="/?page=open_ad&amp;id=ad195" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/EXPOSA/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1373</div>
+                  <div class="ad-card-location">📍 Fulham, London</div>
+                  <div class="ad-card-desc">Consequat voluptate consequat enim ut.</div>
+                  <a href="/?page=open_ad&amp;id=ad252" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/CONCILITY/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1837</div>
+                  <div class="ad-card-location">📍 Peckham, London</div>
+                  <div class="ad-card-desc">Reprehenderit ea deserunt occaecat nisi sit irure enim sunt non cillum.</div>
+                  <a href="/?page=open_ad&amp;id=ad256" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/TYPHONICA/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£411</div>
+                  <div class="ad-card-location">📍 Peckham, London</div>
+                  <div class="ad-card-desc">Pariatur eu laboris cillum nisi ut ea eu incididunt ea.</div>
+                  <a href="/?page=open_ad&amp;id=ad352" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/SENTIA/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1939</div>
+                  <div class="ad-card-location">📍 Chelsea, London</div>
+                  <div class="ad-card-desc">Dolore occaecat voluptate elit proident.</div>
+                  <a href="/?page=open_ad&amp;id=ad440" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/TURNLING/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£558</div>
+                  <div class="ad-card-location">📍 Shoreditch, London</div>
+                  <div class="ad-card-desc">In esse aliqua excepteur velit nulla pariatur nulla proident irure.</div>
+                  <a href="/?page=open_ad&amp;id=ad564" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/ENTOGROK/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£836</div>
+                  <div class="ad-card-location">📍 Hackney, London</div>
+                  <div class="ad-card-desc">Reprehenderit enim Lorem nostrud consectetur do occaecat reprehenderit aliqua quis.</div>
+                  <a href="/?page=open_ad&amp;id=ad580" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/BITREX/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£100</div>
+                  <div class="ad-card-location">📍 Fulham, London</div>
+                  <div class="ad-card-desc">Dolore sit id irure in est sint occaecat aliquip.</div>
+                  <a href="/?page=open_ad&amp;id=ad643" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/EXTRAWEAR/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1452</div>
+                  <div class="ad-card-location">📍 Shoreditch, London</div>
+                  <div class="ad-card-desc">Deserunt aliquip duis officia consequat dolore eu nisi consectetur.</div>
+                  <a href="/?page=open_ad&amp;id=ad685" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/PANZENT/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£894</div>
+                  <div class="ad-card-location">📍 Fulham, London</div>
+                  <div class="ad-card-desc">Proident anim sint fugiat est amet veniam fugiat labore excepteur commodo.</div>
+                  <a href="/?page=open_ad&amp;id=ad688" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/MAGNEATO/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£103</div>
+                  <div class="ad-card-location">📍 Greenwich, London</div>
+                  <div class="ad-card-desc">Labore nostrud tempor dolor ea voluptate aliqua aute velit pariatur occaecat tempor.</div>
+                  <a href="/?page=open_ad&amp;id=ad846" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/ORBEAN/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£232</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Et tempor consequat elit consectetur culpa.</div>
+                  <a href="/?page=open_ad&amp;id=ad889" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/NIPAZ/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1352</div>
+                  <div class="ad-card-location">📍 Peckham, London</div>
+                  <div class="ad-card-desc">Nostrud minim incididunt culpa anim esse est.</div>
+                  <a href="/?page=open_ad&amp;id=ad1017" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/TUBALUM/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1153</div>
+                  <div class="ad-card-location">📍 Greenwich, London</div>
+                  <div class="ad-card-desc">Eu cupidatat velit eu proident ipsum ut labore aliquip.</div>
+                  <a href="/?page=open_ad&amp;id=ad1067" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/RODEOLOGY/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£83</div>
+                  <div class="ad-card-location">📍 Camden, London</div>
+                  <div class="ad-card-desc">Voluptate ullamco sunt sint aliquip nulla id ut officia tempor.</div>
+                  <a href="/?page=open_ad&amp;id=ad1076" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/PAPRICUT/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1876</div>
+                  <div class="ad-card-location">📍 Canary Wharf, London</div>
+                  <div class="ad-card-desc">Minim aliqua nulla nostrud velit id.</div>
+                  <a href="/?page=open_ad&amp;id=ad1121" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/MINGA/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1390</div>
+                  <div class="ad-card-location">📍 Peckham, London</div>
+                  <div class="ad-card-desc">Deserunt consequat consectetur do dolor labore do ipsum excepteur qui reprehenderit.</div>
+                  <a href="/?page=open_ad&amp;id=ad1207" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/SIGNIDYNE/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1323</div>
+                  <div class="ad-card-location">📍 Hackney, London</div>
+                  <div class="ad-card-desc">Commodo duis quis sit eu labore tempor est laborum voluptate proident laboris.</div>
+                  <a href="/?page=open_ad&amp;id=ad1245" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/KINDALOO/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£177</div>
+                  <div class="ad-card-location">📍 Camden, London</div>
+                  <div class="ad-card-desc">Laboris esse dolore proident voluptate commodo culpa enim amet.</div>
+                  <a href="/?page=open_ad&amp;id=ad1346" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/REMOTION/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£230</div>
+                  <div class="ad-card-location">📍 Peckham, London</div>
+                  <div class="ad-card-desc">Veniam eu laborum Lorem id cillum sunt elit laboris laborum quis.</div>
+                  <a href="/?page=open_ad&amp;id=ad1363" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/ZOSIS/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£579</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Est Lorem ut commodo deserunt commodo aute fugiat ea cupidatat sit commodo esse.</div>
+                  <a href="/?page=open_ad&amp;id=ad1378" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/COMBOGENE/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1674</div>
+                  <div class="ad-card-location">📍 Hackney, London</div>
+                  <div class="ad-card-desc">Nisi quis pariatur non reprehenderit est ullamco excepteur adipisicing sit sunt ad proident.</div>
+                  <a href="/?page=open_ad&amp;id=ad1851" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/BESTO/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£113</div>
+                  <div class="ad-card-location">📍 Hackney, London</div>
+                  <div class="ad-card-desc">Nulla et non ad deserunt excepteur eu voluptate amet ullamco aliqua eiusmod nulla sit.</div>
+                  <a href="/?page=open_ad&amp;id=ad1916" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/CAXT/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1541</div>
+                  <div class="ad-card-location">📍 Peckham, London</div>
+                  <div class="ad-card-desc">Reprehenderit aute irure amet proident magna laboris ullamco ea cillum anim deserunt incididunt.</div>
+                  <a href="/?page=open_ad&amp;id=ad1939" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/AUSTECH/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£372</div>
+                  <div class="ad-card-location">📍 Camden, London</div>
+                  <div class="ad-card-desc">Do voluptate esse deserunt officia duis sint laborum tempor.</div>
+                  <a href="/?page=open_ad&amp;id=ad1960" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/PERKLE/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1590</div>
+                  <div class="ad-card-location">📍 Hackney, London</div>
+                  <div class="ad-card-desc">Amet amet eiusmod amet veniam ea do id aute id in magna fugiat enim.</div>
+                  <a href="/?page=open_ad&amp;id=ad2180" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/COWTOWN/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£415</div>
+                  <div class="ad-card-location">📍 Shoreditch, London</div>
+                  <div class="ad-card-desc">Cupidatat sit irure magna aliquip tempor veniam voluptate nostrud veniam elit aliqua ullamco sit.</div>
+                  <a href="/?page=open_ad&amp;id=ad2203" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/DARWINIUM/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1128</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Do aliqua laboris culpa incididunt quis ad nulla.</div>
+                  <a href="/?page=open_ad&amp;id=ad2224" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/SIGNIDYNE/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1483</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Cupidatat aliquip nulla officia ad mollit dolor amet officia incididunt velit voluptate ex excepteur.</div>
+                  <a href="/?page=open_ad&amp;id=ad2242" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/OLUCORE/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1054</div>
+                  <div class="ad-card-location">📍 Clapham, London</div>
+                  <div class="ad-card-desc">Proident cillum aute sunt sint mollit ea exercitation sint ex enim cillum.</div>
+                  <a href="/?page=open_ad&amp;id=ad2293" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/MIXERS/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1405</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Adipisicing excepteur commodo anim Lorem do ad tempor.</div>
+                  <a href="/?page=open_ad&amp;id=ad2347" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/ZINCA/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£749</div>
+                  <div class="ad-card-location">📍 Hackney, London</div>
+                  <div class="ad-card-desc">Mollit amet reprehenderit officia laborum.</div>
+                  <a href="/?page=open_ad&amp;id=ad2450" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/BRAINCLIP/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£722</div>
+                  <div class="ad-card-location">📍 Peckham, London</div>
+                  <div class="ad-card-desc">Deserunt proident et aliqua dolore aute esse et do duis minim eiusmod velit consequat deserunt.</div>
+                  <a href="/?page=open_ad&amp;id=ad2485" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/QUARMONY/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1342</div>
+                  <div class="ad-card-location">📍 Chelsea, London</div>
+                  <div class="ad-card-desc">Proident aliqua labore voluptate nisi consectetur velit esse.</div>
+                  <a href="/?page=open_ad&amp;id=ad2493" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/PASTURIA/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1076</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Magna adipisicing fugiat voluptate anim do deserunt laboris duis enim in officia.</div>
+                  <a href="/?page=open_ad&amp;id=ad2688" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/DANCERITY/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1044</div>
+                  <div class="ad-card-location">📍 Hackney, London</div>
+                  <div class="ad-card-desc">Sit tempor Lorem quis consectetur sint reprehenderit amet aliquip officia officia ipsum duis do dolore.</div>
+                  <a href="/?page=open_ad&amp;id=ad2718" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/ZORROMOP/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1361</div>
+                  <div class="ad-card-location">📍 Canary Wharf, London</div>
+                  <div class="ad-card-desc">Exercitation proident deserunt reprehenderit aliquip veniam esse cupidatat incididunt cupidatat pariatur non velit magna.</div>
+                  <a href="/?page=open_ad&amp;id=ad2764" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/INTRADISK/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1079</div>
+                  <div class="ad-card-location">📍 Camden, London</div>
+                  <div class="ad-card-desc">Magna sunt culpa elit qui.</div>
+                  <a href="/?page=open_ad&amp;id=ad2815" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/IMMUNICS/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1371</div>
+                  <div class="ad-card-location">📍 Chelsea, London</div>
+                  <div class="ad-card-desc">Lorem aliqua nisi excepteur do exercitation non ad exercitation aliquip nisi enim quis ex amet.</div>
+                  <a href="/?page=open_ad&amp;id=ad3000" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/COMTREK/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1664</div>
+                  <div class="ad-card-location">📍 Chelsea, London</div>
+                  <div class="ad-card-desc">Enim et in cupidatat eu excepteur velit exercitation.</div>
+                  <a href="/?page=open_ad&amp;id=ad3210" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/XYMONK/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1594</div>
+                  <div class="ad-card-location">📍 Chelsea, London</div>
+                  <div class="ad-card-desc">Culpa pariatur cupidatat aliqua occaecat ullamco occaecat quis in esse ad.</div>
+                  <a href="/?page=open_ad&amp;id=ad3228" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/EXTRO/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£746</div>
+                  <div class="ad-card-location">📍 Camden, London</div>
+                  <div class="ad-card-desc">Velit est voluptate labore commodo non excepteur qui exercitation ullamco dolor do commodo.</div>
+                  <a href="/?page=open_ad&amp;id=ad3550" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/ENOMEN/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£787</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Eiusmod dolor esse anim eu qui.</div>
+                  <a href="/?page=open_ad&amp;id=ad3663" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/VURBO/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1133</div>
+                  <div class="ad-card-location">📍 Stratford, London</div>
+                  <div class="ad-card-desc">Est quis qui ex magna amet enim laboris commodo in.</div>
+                  <a href="/?page=open_ad&amp;id=ad3674" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/DANCITY/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1030</div>
+                  <div class="ad-card-location">📍 Shoreditch, London</div>
+                  <div class="ad-card-desc">Quis laborum eiusmod cupidatat culpa amet eu tempor eu ipsum adipisicing excepteur.</div>
+                  <a href="/?page=open_ad&amp;id=ad3752" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/ETERNIS/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£300</div>
+                  <div class="ad-card-location">📍 Canary Wharf, London</div>
+                  <div class="ad-card-desc">Sunt labore esse aliqua eu proident ut elit mollit nisi ullamco enim et proident deserunt.</div>
+                  <a href="/?page=open_ad&amp;id=ad3776" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/PHARMEX/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£1742</div>
+                  <div class="ad-card-location">📍 Clapham, London</div>
+                  <div class="ad-card-desc">Sint dolore do elit non incididunt ipsum pariatur veniam cillum.</div>
+                  <a href="/?page=open_ad&amp;id=ad3828" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            
+              <div class="ad-card">
+                <img src="https://picsum.photos/seed/TALAE/450/300" alt="Used Washing Machine Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">Used Washing Machine</div>
+                  <div class="ad-card-price">£652</div>
+                  <div class="ad-card-location">📍 Clapham, London</div>
+                  <div class="ad-card-desc">Fugiat occaecat nisi elit minim elit cillum.</div>
+                  <a href="/?page=open_ad&amp;id=ad3836" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            </div>
+</main></div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchQuery = "washing machine";
+    if (searchQuery) {
+      fetch(`/api/search.php?q=${encodeURIComponent(searchQuery)}`)
+        .then(response => response.json())
+            .then(data => {
+          const resultsContainer = document.getElementById('search-results');
+          if (!Array.isArray(data) || data.length === 0) {
+            resultsContainer.innerHTML = '<p>No results found.</p>';
+            return;
+          }
+          resultsContainer.innerHTML = data.map(ad => {
+            const img = (ad.images && ad.images.length) ? ad.images[0] : '';
+            const title = ad.ad_title || ad.title || 'Untitled';
+            const desc = ad.ad_description || ad.description || '';
+            const price = (ad.ad_price !== undefined) ? ad.ad_price : (ad.price !== undefined ? ad.price : '---');
+            const location = ad.location || '';
+            return `
+              <div class="ad-card">
+                <img src="${img}" alt="${title} Image of Product">
+                <div class="ad-card-body">
+                  <div class="ad-card-title">${title}</div>
+                  <div class="ad-card-price">£${price}</div>
+                  <div class="ad-card-location">📍 ${location}</div>
+                  <div class="ad-card-desc">${desc}</div>
+                  <a href="/?page=open_ad&id=${ad.id}" class="btn btn-primary">open ad</a>
+                </div>
+              </div>
+            `;
+          }).join('');
+        })
+        .catch(error => {
+          console.error('Error fetching search results:', error);
+        });
+    }
+  });
+</script>
+    
+
+  
+
+  
+            <footer role="contentinfo" aria-label="Footer">
+                          <div class="footer-inner">
+                <div class="footer-brand-row">
+                  <span class="site-name">craiglist</span>
+                  <span class="tagline">london uk · community-powered classifieds since 1995</span>
+                </div>
+
+                <div class="footer-links-row">
+                  <div class="footer-col">
+                    <h4>for sale</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_antiques">antiques</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_appliances">appliances</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_bikes">bikes</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_books">books</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_cars_vans">cars &amp; vans</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_clothes">clothes</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_electronics">electronics</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_furniture">furniture</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_free_stuff">free stuff</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>housing</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_flats_to_rent">flats to rent</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_rooms_wanted">rooms wanted</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_houses_for_sale">houses for sale</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_short_term_lets">short-term lets</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_flatshares">flatshares</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_commercial">commercial</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_parking">parking</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>jobs</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_accounting">accounting</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_admin_office">admin / office</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_creative_design">creative / design</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_education">education</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_hospitality">hospitality</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_part_time">part time</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_tech_it">tech / IT</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>services</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_beauty">beauty</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_childcare">childcare</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_cleaning">cleaning</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_financial">financial</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_lessons_tutoring">lessons &amp; tutoring</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_moving">moving</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_pet_care">pet care</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>community</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_activities">activities</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_events">events</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_groups">groups</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_local_news">local news</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_missed_connections">missed connections</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Category_volunteers">volunteers</a></li>
+                    </ul>
+                  </div>
+                  <div class="footer-col">
+                    <h4>craiglist</h4>
+                    <ul>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_AboutUs">about us</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_Blog">blog</a></li>
+                      <li><a href="#/?page=information/avoiding-scams">safety tips</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_AvoidingScams">avoid scams</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_Help">help &amp; FAQ</a></li>
+                      <li><a href="/?page=in_development&amp;undevelopedname=Info_Contact">contact us</a></li>
+                    </ul>
+                    <div class="footer-social" role="navigation" aria-label="Footer social links">
+                      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="icon-facebook" aria-hidden="true"></i></a>
+                      <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="icon-twitter" aria-hidden="true"></i></a>
+                      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="icon-instagram" aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-bottom">
+                  <span>© 2026 craiglist london. all rights reserved.</span>
+                  <span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Privacy">privacy</a><span class="sep">·</span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Terms">terms</a><span class="sep">·</span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Cookies">cookies</a><span class="sep">·</span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Accessibility">accessibility</a><span class="sep">·</span>
+                    <a href="/?page=in_development&amp;undevelopedname=Info_Sitemap">sitemap</a>
+                  </span>
+                </div>
+              </div>
+            </footer>
+
+
